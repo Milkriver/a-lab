@@ -1,0 +1,9 @@
+@import '@alfalab/core-components/vars/index.css';
+
+:root {
+    --drawer-width: 500px;
+}
+
+body{
+    margin: 0;
+}

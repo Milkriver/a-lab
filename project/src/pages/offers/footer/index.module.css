@@ -1,0 +1,16 @@
+.footer{
+    position: absolute; 
+    bottom: 10px;
+    left: 10px; 
+    display: flex; 
+    width: 99%;
+}
+
+.copyright{
+    width: 50%;
+}
+
+.policy{
+    width: 50%; 
+    padding-left: 10px;
+}
