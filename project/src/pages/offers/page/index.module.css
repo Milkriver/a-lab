@@ -3,7 +3,7 @@
 }
 
 .pageWrapper{
-    display: 'flex'; 
+    display: flex; 
     flex-direction: row;
     height: 98%;
     overflow: hidden;
