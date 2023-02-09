@@ -1,0 +1,15 @@
+.pageWrapper{
+    padding: 16px 32px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.pageImage{
+    width: 295px;
+    height: 295px;
+}
+.link{
+    text-decoration: none;
+}
+

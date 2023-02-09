@@ -1,9 +1,7 @@
 .footer{
-    position: absolute; 
     bottom: 10px;
     left: 10px; 
     display: flex; 
-    width: 99%;
 }
 
 .copyright{

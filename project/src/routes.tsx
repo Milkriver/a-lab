@@ -1,31 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Page } from "./pages/offers/page";
+import { AlfaMadePage } from "./pages/alfa-made-page";
+import { MainPage } from "./pages/main-page";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Page />,
-      children: [
-        {
-          path: "cart",
+  {
+    path: "/",
+    element: <MainPage />,
+    children: [
+      {
+        path: "cart",
         // element={<CartPage />}
-        },
-        {
-            path: "contacts",
+      },
+      {
+        path: "contacts",
         // element={<ContactsPage />}
-          },
-          {
-            path: "design",
+      },
+      {
+        path: "design",
         // element={<DesignPage />}
-          },
-          {
-            path: "made",
-        // element={<MadeByPage />}
-          },
-          {
-            path: "policy",
+      },
+      {
+        path: "policy",
         // element={<Policy />}
-          },
-      ],
-    },
-  ]);
+      },
+    ],
+  },
+  {
+    path: "/made",
+    element: <AlfaMadePage />
+  },
+]);

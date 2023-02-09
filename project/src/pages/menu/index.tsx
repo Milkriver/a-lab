@@ -11,7 +11,6 @@ export const Menu = () => {
                 <Link
                     view='primary'
                     rel='noopener'
-                    target='_blank'
                     href='/made'
                 >
                     Сделано в Альфе
@@ -21,7 +20,6 @@ export const Menu = () => {
                 <Link
                     view='primary'
                     rel='noopener'
-                    target='_blank'
                     href='/design'
                 >
                     Свой дизайн
@@ -31,7 +29,6 @@ export const Menu = () => {
                 <Link
                     view='primary'
                     rel='noopener'
-                    target='_blank'
                     href='/contacts'
                 >
                     Контакты
@@ -41,7 +38,6 @@ export const Menu = () => {
                 <Link
                     view='primary'
                     rel='noopener'
-                    target='_blank'
                     href='/policy'
                 >
                     Политика конфиденциальности

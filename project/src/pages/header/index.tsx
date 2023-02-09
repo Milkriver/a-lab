@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <Typography.Title tag='h1' color="accent" weight="bold"><Link href="#" children={undefined}></Link> A-Store</Typography.Title>
+      <Link href={'/'}><Typography.Title tag='h1' color="accent" weight="bold"> A-Store</Typography.Title></Link>
       <div className={styles.menuButton} onClick={handleModalOpen}>
         <BurgerMIcon />
         <Gap size='s' />
