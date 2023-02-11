@@ -1,14 +1,22 @@
-.footer{
-    bottom: 10px;
-    left: 10px; 
-    display: flex; 
+.footer {
+    padding: var(--gap-m) var(--gap-8xl);
+    display: flex;
 }
 
-.copyright{
+.mainFooter {
+    padding: var(--gap-m-neg) var(--gap-l-neg);
+    display: flex;
+    position: absolute;
+    left: var(--gap-xl);
+    bottom: var(--gap-l);
+    width: 98%;
+}
+
+.copyright {
     width: 50%;
 }
 
-.policy{
-    width: 50%; 
+.policy {
+    width: 50%;
     padding-left: 10px;
 }

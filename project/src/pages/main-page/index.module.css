@@ -1,29 +1,27 @@
-.page{
-    height: 900px;
-}
-
-.pageWrapper{
-    display: flex; 
+.pageWrapper {
+    display: flex;
     flex-direction: row;
     height: 98%;
     overflow: hidden;
 }
 
-.pageImageWrapper{
-    width: 50%; 
+.pageImageWrapper {
+    width: 50%;
     position: absolute;
     top: 0;
+    cursor: pointer;
 }
 
-.pageImageWrapperRight{
-    width: 50%; 
+.pageImageWrapperRight {
+    width: 50%;
     position: absolute;
     top: 0;
     left: 50%;
+    cursor: pointer;
 }
 
-.pageImage{
-    width: 100%; 
-    object-fit: cover; 
-    height: 935px;
+.pageImage {
+    width: 100%;
+    object-fit: cover;
+    height: 933px;
 }

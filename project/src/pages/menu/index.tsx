@@ -3,46 +3,26 @@ import { Typography } from '@alfalab/core-components/typography';
 import { CrossHeavyMIcon } from '@alfalab/icons/glyph/dist/CrossHeavyMIcon';
 import styles from './index.module.css';
 
-export const Menu = () => {
+type TProps = {
+    onClose: () => void
+}
+
+
+export const Menu = ({ onClose }: TProps) => {
     return (
         <div className={styles.menu}>
-            <div className={styles.menuCloseIcon}><CrossHeavyMIcon /></div>
+            <div className={styles.menuCloseIcon} onClick={onClose}><CrossHeavyMIcon /></div>
             <Typography.Text view='primary-medium'>
-                <Link
-                    view='primary'
-                    rel='noopener'
-                    href='/made'
-                >
-                    Сделано в Альфе
-                </Link>
+                <Link view='primary' href='/made'>Сделано в Альфе</Link>
             </Typography.Text>
             <Typography.Text view='primary-medium'>
-                <Link
-                    view='primary'
-                    rel='noopener'
-                    href='/design'
-                >
-                    Свой дизайн
-                </Link>
+                <Link view='primary' href='/design'>Свой дизайн</Link>
             </Typography.Text>
             <Typography.Text view='primary-medium'>
-                <Link
-                    view='primary'
-                    rel='noopener'
-                    href='/contacts'
-                >
-                    Контакты
-                </Link>
+                <Link view='primary' href='/contacts'> Контакты </Link>
             </Typography.Text>
             <Typography.Text view='primary-medium'>
-                <Link
-                    view='primary'
-                    rel='noopener'
-                    href='/policy'
-                >
-                    Политика конфиденциальности
-                    и обработки персональных данных
-                </Link>
+                <Link view='primary' href='/policy'>Политика конфиденциальности и обработки персональных данных </Link>
             </Typography.Text>
         </div>
     );

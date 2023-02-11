@@ -3,7 +3,7 @@ import { BurgerMIcon } from '@alfalab/icons/glyph/dist/BurgerMIcon';
 import { useState } from 'react';
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
-import { Drawer } from '@alfalab/core-components/drawer';
+import { SidePanelDesktop } from '@alfalab/core-components/side-panel/desktop';
 import { Menu } from '../menu';
 import { Link } from '@alfalab/core-components/link';
 
@@ -16,14 +16,14 @@ export const Header = () => {
       <Link href={'/'}><Typography.Title tag='h1' color="accent" weight="bold"> A-Store</Typography.Title></Link>
       <div className={styles.menuButton} onClick={handleModalOpen}>
         <BurgerMIcon />
-        <Gap size='s' />
-        <Typography.Title tag='h1' view='medium' color="primary" weight="bold">
+        <Gap size='l' />
+        <Typography.Title className={styles.text} tag='h1' view='medium' color="primary" weight="bold">
           меню
         </Typography.Title>
       </div>
-      <Drawer open={open} onClose={handleModalOpen}>
-        <Menu />
-      </Drawer>
+      <SidePanelDesktop open={open} onClose={handleModalOpen}>
+        <Menu onClose={handleModalOpen} />
+      </SidePanelDesktop>
     </div>
   );
 }
