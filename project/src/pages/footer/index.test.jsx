@@ -8,5 +8,9 @@ describe('Footer', () => {
     const link = await screen.findByRole('link')
     expect(link).toHaveTextContent('Политика')
   });
+  test('loads and displays footer isPageMain=false', async () => {
+    render(<Footer isPageMain={false} />)
+    expect(screen.queryByText(/Политика/i)).not.toBeInTheDocument();
+  });
 })
 

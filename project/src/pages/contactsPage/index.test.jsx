@@ -5,8 +5,8 @@ import { ContactsPage } from './index'
 describe('ContactsPage', () => {
   test('loads and displays ContactsPage', async () => {
     render(<ContactsPage />)
-    const link = await screen.findByText('info@alfabankstore.ru')
-    expect(link).toHaveTextContent('info@alfabankstore.ru')
+    const email = await screen.findByText('info@alfabankstore.ru')
+    expect(email).toHaveTextContent('info@alfabankstore.ru')
   });
 })
 
