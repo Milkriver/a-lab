@@ -27,6 +27,6 @@ export type TCardPreview = {
     title: string,
   };
 
-export type TOption = { key: string, option: string };
+export type TOption = { key: string, content: string };
 
 export type TOptions = TOption[];

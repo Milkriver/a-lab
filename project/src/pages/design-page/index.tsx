@@ -9,6 +9,7 @@ import styles from './index.module.css';
 
 
 const products = require('../../mocks/groups.json').groups;
+//TODO:  сделать компонент карточки превью
 const renderCard = (card: TCard, onClick: () => void) => {
   return (
     <Grid.Col key={card.id}>
@@ -23,19 +24,6 @@ const renderCard = (card: TCard, onClick: () => void) => {
     </Grid.Col>
   );
 }
-const renderCardList = (cardList: TCardList, onClick: () => void) => {
-  return (
-    <div key={cardList.id}>
-      <Gap size='xl' />
-      <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{cardList.title}</Typography.Title>
-      <Gap size='xl' />
-      <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
-        {cardList.products.map((element: TCard) => renderCard(element, onClick))}
-      </Grid.Row>
-      <Gap size='xl' />
-    </div>
-  );
-};
 
 export const DesignPage = () => {
   const navigate = useNavigate();
@@ -55,7 +43,20 @@ export const DesignPage = () => {
         </Typography.Title>
         <Gap size='xl' />
         <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
-          {products.map((element: TCardList) => renderCardList(element, onClick))}
+          {products.map((list: TCardList) => {
+            return (
+              <div key={list.id}>
+                <Gap size='xl' />
+                <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.Title>
+                <Gap size='xl' />
+                <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
+                  {list.products.map((element: TCard) => renderCard(element, onClick))}
+                </Grid.Row>
+                <Gap size='xl' />
+              </div>
+            )
+          })
+        }
         </Grid.Row>
         <Gap size='xl' />
         <Gap size='xl' />

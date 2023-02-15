@@ -27,6 +27,7 @@ export const AlfaMadePage = () => {
         <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
           {products.map((element: TCardPreview) => {
             return (
+              //TODO:  сделать компонент карточки превью
               <Grid.Col key={element.id}>
                 <div className={styles.card} onClick={onClick}>
                   <img className={styles.pageImage} src={element.preview} alt={element.title} />
