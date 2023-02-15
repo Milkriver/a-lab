@@ -22,7 +22,8 @@ export const Header = () => {
         </Typography.Title>
       </div>
       <SidePanelDesktop open={open} onClose={handleModalOpen}>
-        <Menu onClose={handleModalOpen} />
+        <SidePanelDesktop.Header hasCloser={true} />
+        <Menu />
       </SidePanelDesktop>
     </div>
   );

@@ -26,16 +26,16 @@ export const ProductPage = () => {
   }
   const handleSize = (evtPayload: BaseSelectChangePayload) => {
     if (evtPayload?.selected) {
-        const selectValue = evtPayload.selected.content as string;
-        setSize(selectValue);
-      }
-}
-const handleColor = (evtPayload: BaseSelectChangePayload) => {
-  if (evtPayload?.selected) {
+      const selectValue = evtPayload.selected.content as string;
+      setSize(selectValue);
+    }
+  }
+  const handleColor = (evtPayload: BaseSelectChangePayload) => {
+    if (evtPayload?.selected) {
       const selectValue = evtPayload.selected.content as string;
       setColor(selectValue);
     }
-}
+  }
   return (
     <div className={styles.productPage}>
       <Header />
@@ -63,25 +63,25 @@ const handleColor = (evtPayload: BaseSelectChangePayload) => {
           {product.sizes && <>
             <Gap size='xl' />
             <Select
-                size='s'
-                allowUnselect={false}
-                options={sizes}
-                placeholder='Выберите размер'
-                onChange={handleSize}
-                selected={size ? sizes.find(x => x.content === size)!.key : null}
-            />       
+              size='s'
+              allowUnselect={false}
+              options={sizes}
+              placeholder='Выберите размер'
+              onChange={handleSize}
+              selected={size ? sizes.find(x => x.content === size)!.key : null}
+            />
           </>
           }
           {product.colors && <>
             <Gap size='xl' />
             <Select
-                size='s'
-                allowUnselect={false}
-                options={colors}
-                placeholder='Выберите цвет'
-                onChange={handleColor}
-                selected={color ? colors.find(x => x.content === color)!.key : null}
-            />  
+              size='s'
+              allowUnselect={false}
+              options={colors}
+              placeholder='Выберите цвет'
+              onChange={handleColor}
+              selected={color ? colors.find(x => x.content === color)!.key : null}
+            />
           </>
           }
           <Gap size='xl' />
