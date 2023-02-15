@@ -2,31 +2,11 @@ import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
 import { useNavigate } from 'react-router-dom';
+import { TCard, TCardList } from '../../types';
 import { Footer } from '../footer';
 import { Header } from '../header';
 import styles from './index.module.css';
 
-
-type TCard = {
-  id: number,
-  preview: string,
-  title: string,
-  price: number,
-  availability: boolean,
-  colors: string[],
-  description: string,
-  subtitle: string,
-  images: string[],
-  sizes: string[],
-  stickerNumbers: number[],
-}
-
-type TCardList = {
-  description: string,
-  id: number,
-  products: TCard[],
-  title: string,
-}
 
 const products = require('../../mocks/groups.json').groups;
 const renderCard = (card: TCard, onClick: () => void) => {
@@ -37,7 +17,7 @@ const renderCard = (card: TCard, onClick: () => void) => {
         <Typography.Title tag="div" view='small'>{card.title}</Typography.Title>
         <Gap size='xs' />
         <Typography.Text tag="div" view='primary-large' color="tertiary">{card.subtitle}</Typography.Text>
-        <Gap size='xs' />
+        <Gap size='xl' />
         <Typography.Title tag="div" view='small' weight="bold">{card.price}&#8381;</Typography.Title>
       </div>
     </Grid.Col>

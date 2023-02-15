@@ -7,9 +7,7 @@ import { Gallery } from '@alfalab/core-components/gallery';
 import { Select } from '@alfalab/core-components/select';
 import { useState } from 'react';
 import styles from './index.module.css';
-
-type TOption = { key: string, option: string };
-type TOptions = TOption[];
+import { TOptions } from '../../types';
 
 export const ProductPage = () => {
   const product = require('../../mocks/products.json').products[1];
