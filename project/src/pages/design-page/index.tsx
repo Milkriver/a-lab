@@ -67,7 +67,7 @@ export const DesignPage = () => {
           А ещё там можно добавить сразу несколько стикеров на одну вещь.
         </Typography.Title>
       </div>
-      <Footer isPageMain={false} />
+      <Footer />
     </div>
   );
 }

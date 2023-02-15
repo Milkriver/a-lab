@@ -18,6 +18,12 @@
     height: 600px;
 }
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 850px; 
+}
+
 .productInfo {
     padding-left: var(--gap-6xl);
 }

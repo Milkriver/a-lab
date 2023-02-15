@@ -35,7 +35,7 @@ export const ContactsPage = () => {
         >
         </iframe>
       </div>
-      <Footer isPageMain={false} />
+      <Footer />
     </div>
   );
 }

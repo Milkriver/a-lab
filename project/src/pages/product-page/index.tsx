@@ -26,11 +26,11 @@ export const ProductPage = () => {
     <div className={styles.productPage}>
       <Header />
       <div className={styles.pageWrapper}>
-        <div>
+        <div className={styles.galleryWrapper}>
           <img className={styles.pageImage} src={activeImage} alt={product.title} />
           <Gap size='xl' />
           <div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '850px' }}>
+            <div className={styles.gallery}>
               {product.images.map((image: string) => (
                 <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} />
               ))}
@@ -62,7 +62,7 @@ export const ProductPage = () => {
           <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
         </div>
       </div>
-      <Footer isPageMain={false} />
+      <Footer />
     </div>
   );
 }

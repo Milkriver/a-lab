@@ -6,27 +6,9 @@ import { Header } from "../header";
 import styles from './index.module.css';
 import { Gap } from "@alfalab/core-components/gap";
 import { useNavigate } from "react-router-dom";
-
-type TCard = {
-  "id": number,
-  "preview": string,
-  "title": string,
-  "price": number,
-  "availability": boolean,
-}
+import { TCardPreview } from "../../types";
 
 const products = require('../../mocks/products.json').products;
-const renderCard = (card: TCard, onClick: () => void) => {
-  return (
-    <Grid.Col key={card.id}>
-      <div className={styles.card} onClick={onClick}>
-        <img className={styles.pageImage} src={card.preview} alt={card.title} />
-        <Typography.Title tag="div" view='small'>{card.title}</Typography.Title>
-        <Typography.Title tag="div" view='xsmall' weight="bold">{card.price}&#8381;</Typography.Title>
-      </div>
-    </Grid.Col>
-  );
-}
 
 export const AlfaMadePage = () => {
   const navigate = useNavigate();
@@ -43,11 +25,21 @@ export const AlfaMadePage = () => {
         </Typography.Title>
         <Gap size='xl' />
         <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
-          {products.map((element: TCard) => renderCard(element, onClick))}
+          {products.map((element: TCardPreview) => {
+            return (
+              <Grid.Col key={element.id}>
+                <div className={styles.card} onClick={onClick}>
+                  <img className={styles.pageImage} src={element.preview} alt={element.title} />
+                  <Typography.Title tag="div" view='small'>{element.title}</Typography.Title>
+                  <Gap size='xs' />
+                  <Typography.Title tag="div" view='xsmall' weight="bold">{element.price}&#8381;</Typography.Title>
+                </div>
+              </Grid.Col>
+            )
+          })}
         </Grid.Row>
-
       </div>
-      <Footer isPageMain={false} />
+      <Footer />
     </div>
   );
 }

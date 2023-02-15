@@ -88,7 +88,7 @@ export const PolicyPage = () => {
           Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу https://store.alfabank.ru/policy.
         </Typography.Text>
       </div>
-      <Footer isPageMain={false} />
+      <Footer />
     </div>
   );
 }

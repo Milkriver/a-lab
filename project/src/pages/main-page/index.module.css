@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     cursor: pointer;
+    background: #000000;  
 }
 
 .pageImageWrapperRight {
@@ -18,6 +19,7 @@
     top: 0;
     left: 50%;
     cursor: pointer;
+    background: #000000; 
 }
 
 .pageImage {
@@ -25,3 +27,8 @@
     object-fit: cover;
     height: 933px;
 }
+
+.pageImage:hover{
+    opacity: 0.85;
+}
+
