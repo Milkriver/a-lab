@@ -1,15 +1,20 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: var(--gap-xs) var(--gap-xl);
     position: relative;
     z-index: 1;
     background-color: white;
     cursor: pointer;
 }
 
-.menuButton{
+.menuButton {
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+.text {
+    padding-bottom: var(--gap-xs);
+    padding-left: var(--gap-xs);
 }
