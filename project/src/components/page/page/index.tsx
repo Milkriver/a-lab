@@ -1,12 +1,17 @@
 import { Footer } from '../footer';
 import { Header } from '../header';
-import styles from './index.module.css';
 
-export const CartPage = () => {
+type TProps = {
+  children: React.ReactNode;
+}
+
+export const Page = ({ children }: TProps) => {
   return (
-    <div className={styles.cartPage}>
+    <div>
       <Header />
+      {children}
       <Footer />
     </div>
   );
 }
+

@@ -1,21 +1,19 @@
 import { Typography } from "@alfalab/core-components/typography";
 import { Grid } from "@alfalab/core-components/grid";
-import { Footer } from "../footer";
-import { Header } from "../header";
 
 import styles from './index.module.css';
 import { Gap } from "@alfalab/core-components/gap";
 import { useNavigate } from "react-router-dom";
 import { TCardPreview } from "../../types";
+import { Page } from "../../components/page/page";
 
 const products = require('../../mocks/products.json').products;
 
-export const AlfaMadePage = () => {
+export const AlfaMade = () => {
   const navigate = useNavigate();
   const onClick = () => navigate('/product');
   return (
-    <div className={styles.page}>
-      <Header />
+    <Page>
       <div className={styles.pageWrapper}>
         <Gap size='xl' />
         <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.Title>
@@ -40,7 +38,6 @@ export const AlfaMadePage = () => {
           })}
         </Grid.Row>
       </div>
-      <Footer />
-    </div>
+      </Page>
   );
 }

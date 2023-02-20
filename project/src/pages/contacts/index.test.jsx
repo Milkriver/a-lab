@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { ContactsPage } from './index'
+import { Contacts } from './index'
 
-describe('ContactsPage', () => {
-  test('loads and displays ContactsPage', async () => {
-    render(<ContactsPage />)
+describe('Contacts', () => {
+  test('loads and displays Contacts', async () => {
+    render(<Contacts />)
     const email = await screen.findByText('info@alfabankstore.ru')
     expect(email).toHaveTextContent('info@alfabankstore.ru')
   });

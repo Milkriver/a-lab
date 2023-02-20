@@ -2,9 +2,8 @@ import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
 import { useNavigate } from 'react-router-dom';
+import { Page } from '../../components/page/page';
 import { TCard, TCardList } from '../../types';
-import { Footer } from '../footer';
-import { Header } from '../header';
 import styles from './index.module.css';
 
 
@@ -25,12 +24,11 @@ const renderCard = (card: TCard, onClick: () => void) => {
   );
 }
 
-export const DesignPage = () => {
+export const Design = () => {
   const navigate = useNavigate();
   const onClick = () => navigate('/product');
   return (
-    <div className={styles.designPage}>
-      <Header />
+    <Page>
       <div className={styles.pageWrapper}>
         <Gap size='xl' />
         <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Свой дизайн</Typography.Title>
@@ -56,10 +54,8 @@ export const DesignPage = () => {
               </div>
             )
           })
-        }
+          }
         </Grid.Row>
-        <Gap size='xl' />
-        <Gap size='xl' />
         <Gap size='xl' />
         <Typography.Title tag='h6' view='small' color="tertiary">
           Посмотреть и потрогать все стикеры можно в A-Store на Технопарке.
@@ -68,7 +64,6 @@ export const DesignPage = () => {
           А ещё там можно добавить сразу несколько стикеров на одну вещь.
         </Typography.Title>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }

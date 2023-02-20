@@ -1,14 +1,12 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Link } from '@alfalab/core-components/link';
 import { Typography } from '@alfalab/core-components/typography';
-import { Footer } from '../footer';
-import { Header } from '../header';
+import { Page } from '../../components/page/page';
 import styles from './index.module.css';
 
-export const ContactsPage = () => {
+export const Contacts = () => {
   return (
-    <div className={styles.contactsPage}>
-      <Header />
+    <Page>
       <div className={styles.pageWrapper}>
         <Typography.Title tag='h1' view='xlarge' color="primary" weight='bold'>Контакты</Typography.Title>
         <Gap size='l' />
@@ -35,7 +33,6 @@ export const ContactsPage = () => {
         >
         </iframe>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }

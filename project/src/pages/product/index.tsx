@@ -1,15 +1,14 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
 import { Button } from '@alfalab/core-components/button';
-import { Footer } from '../footer';
-import { Header } from '../header';
 import { Gallery } from '@alfalab/core-components/gallery';
 import { Select, BaseSelectChangePayload } from '@alfalab/core-components/select';
 import { useState } from 'react';
 import styles from './index.module.css';
 import { TOptions } from '../../types';
+import { Page } from '../../components/page/page';
 
-export const ProductPage = () => {
+export const Product = () => {
   const product = require('../../mocks/products.json').products[1];
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState('');
@@ -37,8 +36,7 @@ export const ProductPage = () => {
     }
   }
   return (
-    <div className={styles.productPage}>
-      <Header />
+    <Page>
       <div className={styles.pageWrapper}>
         <div className={styles.galleryWrapper}>
           <img className={styles.pageImage} src={activeImage} alt={product.title} />
@@ -90,7 +88,6 @@ export const ProductPage = () => {
           <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }
