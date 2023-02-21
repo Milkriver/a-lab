@@ -4,11 +4,10 @@
 }
 
 .mainFooter {
-    padding: var(--gap-m-neg) var(--gap-l-neg);
     display: flex;
     position: absolute;
     left: var(--gap-xl);
-    bottom: var(--gap-l);
+    bottom: 0;
     width: 98%;
 }
 

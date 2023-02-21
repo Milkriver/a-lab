@@ -1,5 +1,18 @@
+.menuWrapper{
+    background-color: black;
+}
+
 .menu {
     padding: var(--gap-m) var(--gap-2xl);
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+.text{
+    font-size: 11px;
+    color: white;
 }

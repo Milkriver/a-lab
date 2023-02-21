@@ -1,0 +1,29 @@
+.cardWrapper{
+    box-sizing: border-box;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 300px;
+    margin-right: var(--gap-m);
+}
+
+.pageImage {
+    width: 295px;
+    height: 380px;
+}
+
+.pageTitle {
+    font-size: 80px;
+    line-height: 52px;
+}
+.text{
+    font-size: 16px;
+}

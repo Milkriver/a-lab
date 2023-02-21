@@ -3,15 +3,16 @@ import { Header } from '../header';
 
 type TProps = {
   children: React.ReactNode;
+  isPageMain?: boolean;
 }
 
-export const Page = ({ children }: TProps) => {
+export const Page = ({ children, isPageMain }: TProps) => {
   return (
-    <div>
+    <>
       <Header />
       {children}
-      <Footer />
-    </div>
+      <Footer isPageMain={isPageMain} />
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: var(--gap-xs) var(--gap-xl);
+    padding: var(--gap-xs) var(--gap-3xl);
     position: relative;
     z-index: 1;
     background-color: white;

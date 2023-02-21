@@ -1,34 +1,31 @@
-.pageWrapper {
-    display: flex;
-    flex-direction: row;
-    height: 98%;
-    overflow: hidden;
+.pageImageWrapper,
+.pageImageWrapperRight {
+    width: 100%;
+    cursor: pointer;
+    height: 100vh;
+    background-position: center;
+    background-size: no-repeat;
+    background-size: cover;
 }
 
 .pageImageWrapper {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-    background: #000000;  
+    background-image: url('../../assets/Frame_46.jpeg');
 }
 
 .pageImageWrapperRight {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    cursor: pointer;
-    background: #000000; 
+    left: 100%;
+    background-image: url('../../assets/Frame_45.jpeg');
 }
 
-.pageImage {
-    width: 100%;
-    object-fit: cover;
-    height: 933px;
+.pageImageWrapper:hover,
+.pageImageWrapperRight:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
 }
-
-.pageImage:hover{
-    opacity: 0.85;
+.text{
+    padding: var(--gap-l) var(--gap-l);
 }
-
+.link{
+    color: black;
+    text-decoration: none;
+}

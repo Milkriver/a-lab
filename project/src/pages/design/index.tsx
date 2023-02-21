@@ -1,32 +1,15 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
-import { useNavigate } from 'react-router-dom';
+import { Card } from '../../components/card';
 import { Page } from '../../components/page/page';
 import { TCard, TCardList } from '../../types';
 import styles from './index.module.css';
 
 
 const products = require('../../mocks/groups.json').groups;
-//TODO:  сделать компонент карточки превью
-const renderCard = (card: TCard, onClick: () => void) => {
-  return (
-    <Grid.Col key={card.id}>
-      <div className={styles.card} onClick={onClick}>
-        <img className={styles.pageImage} src={card.preview} alt={card.title} />
-        <Typography.Title tag="div" view='small'>{card.title}</Typography.Title>
-        <Gap size='xs' />
-        <Typography.Text tag="div" view='primary-large' color="tertiary">{card.subtitle}</Typography.Text>
-        <Gap size='xl' />
-        <Typography.Title tag="div" view='small' weight="bold">{card.price}&#8381;</Typography.Title>
-      </div>
-    </Grid.Col>
-  );
-}
 
 export const Design = () => {
-  const navigate = useNavigate();
-  const onClick = () => navigate('/product');
   return (
     <Page>
       <div className={styles.pageWrapper}>
@@ -40,15 +23,15 @@ export const Design = () => {
           Перенесём стикер на вещь как на фото
         </Typography.Title>
         <Gap size='xl' />
-        <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
+        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
           {products.map((list: TCardList) => {
             return (
               <div key={list.id}>
                 <Gap size='xl' />
                 <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.Title>
                 <Gap size='xl' />
-                <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
-                  {list.products.map((element: TCard) => renderCard(element, onClick))}
+                <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
+                  {list.products.map((element: TCard) => <Card card={element} />)}
                 </Grid.Row>
                 <Gap size='xl' />
               </div>

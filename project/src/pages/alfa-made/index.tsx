@@ -1,43 +1,32 @@
 import { Typography } from "@alfalab/core-components/typography";
 import { Grid } from "@alfalab/core-components/grid";
-
 import styles from './index.module.css';
 import { Gap } from "@alfalab/core-components/gap";
-import { useNavigate } from "react-router-dom";
-import { TCardPreview } from "../../types";
+import { TCard } from "../../types";
 import { Page } from "../../components/page/page";
+import { Card } from "../../components/card";
 
 const products = require('../../mocks/products.json').products;
 
 export const AlfaMade = () => {
-  const navigate = useNavigate();
-  const onClick = () => navigate('/product');
   return (
     <Page>
       <div className={styles.pageWrapper}>
-        <Gap size='xl' />
-        <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.Title>
-        <Gap size='xl' />
-        <Typography.Title tag='h6' view='small' color="primary">
-          Хотим каждую из этих вещей! Себе, родным и друзьям
-        </Typography.Title>
-        <Gap size='xl' />
-        <Grid.Row align='top' gutter={{ mobile: 0, tablet: 16, desktop: { m: 24 } }}>
-          {products.map((element: TCardPreview) => {
-            return (
-              //TODO:  сделать компонент карточки превью
-              <Grid.Col key={element.id}>
-                <div className={styles.card} onClick={onClick}>
-                  <img className={styles.pageImage} src={element.preview} alt={element.title} />
-                  <Typography.Title tag="div" view='small'>{element.title}</Typography.Title>
-                  <Gap size='xs' />
-                  <Typography.Title tag="div" view='xsmall' weight="bold">{element.price}&#8381;</Typography.Title>
-                </div>
-              </Grid.Col>
-            )
-          })}
+        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
+          <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+            <Gap size='xl' />
+            <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.Title>
+            <Gap size='xl' />
+            <Typography.Title tag='h6' view='small' color="primary">
+              Хотим каждую из этих вещей! Себе, родным и друзьям
+            </Typography.Title>
+            <Gap size='xl' />
+          </Grid.Col>
+        </Grid.Row>
+        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
+          {products.map((element: TCard) => <Card card={element} />)}
         </Grid.Row>
       </div>
-      </Page>
+    </Page>
   );
 }
