@@ -11,7 +11,6 @@ const products = require('../../mocks/products.json').products;
 export const AlfaMade = () => {
   return (
     <Page>
-      <div className={styles.pageWrapper}>
         <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
             <Gap size='xl' />
@@ -26,7 +25,6 @@ export const AlfaMade = () => {
         <Grid.Row align='top' justify="left">
           {products.map((element: TCard) => <Card card={element} />)}
         </Grid.Row>
-      </div>
     </Page>
   );
 }

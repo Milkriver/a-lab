@@ -12,7 +12,7 @@ export const Card = ({ card }: TProps) => {
   return (
     <Grid.Col className={styles.cardWrapper} key={card.id} width={{ mobile: 12, tablet: 6, desktop: 4 }}>
       <a className={styles.card} href='/product'>
-        <img className={styles.pageImage} src={card.preview} alt={card.title} />
+        <div className={styles.pageImage} style={{backgroundImage: `url(${card.preview})`}}/>
         <Typography.Title tag="div" view='small'>{card.title}</Typography.Title>
         {(card.subtitle) && <Gap size='xs' />}
         <Typography.Title className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">

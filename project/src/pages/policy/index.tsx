@@ -1,12 +1,10 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
 import { Page } from '../../components/page/page';
-import styles from './index.module.css';
 
 export const Policy = () => {
   return (
     <Page>
-      <div className={styles.pageWrapper}>
         <Typography.Title tag='h1' view='medium' color="primary">Политика в отношении обработки персональных данных</Typography.Title>
         <Gap size='l' />
         <Typography.Title tag='h1' view='small' color="primary">1. Общие положения</Typography.Title>
@@ -85,7 +83,6 @@ export const Policy = () => {
           В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.
           Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу https://store.alfabank.ru/policy.
         </Typography.Text>
-      </div>
     </Page>
   );
 }

@@ -1,5 +1,6 @@
 import { Footer } from '../footer';
 import { Header } from '../header';
+import styles from './index.module.css';
 
 type TProps = {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ export const Page = ({ children, isPageMain }: TProps) => {
   return (
     <>
       <Header />
-      {children}
+      <div className={isPageMain ? '' : styles.container}>  {children}</div>
       <Footer isPageMain={isPageMain} />
     </>
   );

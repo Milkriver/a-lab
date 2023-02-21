@@ -1,9 +1,3 @@
-.pageWrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 0 var(--gap-8xl);
-}
-
 .pageImage {
     width: 295px;
     height: 380px;

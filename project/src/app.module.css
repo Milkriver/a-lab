@@ -23,10 +23,15 @@
     font-style: normal;
 }
 
-:root {
-    --drawer-width: 500px;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
-body {
+body,
+html {
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
