@@ -1,7 +1,7 @@
 .pageWrapper {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 var(--gap-8xl);
 }
 
 .pageImage {
@@ -18,10 +18,3 @@
     line-height: 52px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}

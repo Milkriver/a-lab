@@ -7,6 +7,7 @@ import { useState } from 'react';
 import styles from './index.module.css';
 import { TCard, TOptions } from '../../types';
 import { Page } from '../../components/page/page';
+import { Grid } from '@alfalab/core-components/grid';
 
 export const Product = () => {
   const product: TCard = require('../../mocks/products.json').products[1];
@@ -40,33 +41,37 @@ export const Product = () => {
   return (
     <Page>
       <div className={styles.pageWrapper}>
-        <div className={styles.galleryWrapper}>
-          <img className={styles.pageImage} src={activeImage} alt={product.title} />
-          <Gap size='xl' />
-          <div>
-            <div className={styles.gallery}>
-              {product.images.map((image: string) => (
-                <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} />
-              ))}
+        <Grid.Row align='top' justify="left">
+          <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
+            <img className={styles.pageImage} src={activeImage} alt={product.title} />
+            <Gap size='xl' />
+            <div>
+              <div className={styles.gallery}>
+                {product.images.map((image: string) => (
+                  <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} />
+                ))}
+              </div>
+              <Gallery
+                open={open}
+                onClose={closeGallery}
+                images={product.images.map(src => ({ src }))}
+              />
             </div>
-            <Gallery
-              open={open}
-              onClose={closeGallery}
-              images={product.images.map(src => ({ src }))}
-            />
-          </div>
-        </div>
-        <div className={styles.productInfo}>
-          <Typography.Title tag='h6' view='small' color="primary">{product.title}</Typography.Title>
-          <Gap size='xl' />
-          <Typography.Title tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.Title>
-          {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
-          {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
-          <Gap size='xl' />
-          <Button view='primary'>В корзину</Button>
-          <Gap size='xl' />
-          <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
-        </div>
+          </Grid.Col>
+          <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
+            <div className={styles.productInfo}>
+              <Typography.Title tag='h6' view='small' color="primary">{product.title}</Typography.Title>
+              <Gap size='xl' />
+              <Typography.Title tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.Title>
+              {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
+              {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
+              <Gap size='xl' />
+              <Button view='primary'>В корзину</Button>
+              <Gap size='xl' />
+              <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
+            </div>
+          </Grid.Col>
+        </Grid.Row>
       </div>
     </Page>
   );

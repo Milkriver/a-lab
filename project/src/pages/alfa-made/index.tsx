@@ -12,7 +12,7 @@ export const AlfaMade = () => {
   return (
     <Page>
       <div className={styles.pageWrapper}>
-        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
+        <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
             <Gap size='xl' />
             <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.Title>
@@ -23,7 +23,7 @@ export const AlfaMade = () => {
             <Gap size='xl' />
           </Grid.Col>
         </Grid.Row>
-        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
+        <Grid.Row align='top' justify="left">
           {products.map((element: TCard) => <Card card={element} />)}
         </Grid.Row>
       </div>

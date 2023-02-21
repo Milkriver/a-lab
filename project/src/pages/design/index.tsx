@@ -13,39 +13,49 @@ export const Design = () => {
   return (
     <Page>
       <div className={styles.pageWrapper}>
-        <Gap size='xl' />
-        <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Свой дизайн</Typography.Title>
-        <Gap size='xl' />
-        <Typography.Title tag='h6' view='small' color="primary">
-          Выберите вещь, а затем — цвет, размер и стикер.
-        </Typography.Title>
-        <Typography.Title tag='h6' view='small' color="primary">
-          Перенесём стикер на вещь как на фото
-        </Typography.Title>
-        <Gap size='xl' />
-        <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
-          {products.map((list: TCardList) => {
-            return (
-              <div key={list.id}>
-                <Gap size='xl' />
-                <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.Title>
-                <Gap size='xl' />
-                <Grid.Row align='top' justify="left" gutter={{ mobile: 0, tablet: 0, desktop: 0 }}>
-                  {list.products.map((element: TCard) => <Card card={element} />)}
-                </Grid.Row>
-                <Gap size='xl' />
-              </div>
-            )
-          })
-          }
+        <Grid.Row align='top' justify="left">
+          <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+            <Gap size='xl' />
+            <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Свой дизайн</Typography.Title>
+            <Gap size='xl' />
+            <Typography.Title tag='h6' view='small' color="primary">
+              Выберите вещь, а затем — цвет, размер и стикер.
+            </Typography.Title>
+            <Typography.Title tag='h6' view='small' color="primary">
+              Перенесём стикер на вещь как на фото
+            </Typography.Title>
+            <Gap size='xl' />
+          </Grid.Col>
         </Grid.Row>
-        <Gap size='xl' />
-        <Typography.Title tag='h6' view='small' color="tertiary">
-          Посмотреть и потрогать все стикеры можно в A-Store на Технопарке.
-        </Typography.Title>
-        <Typography.Title tag='h6' view='small' color="tertiary">
-          А ещё там можно добавить сразу несколько стикеров на одну вещь.
-        </Typography.Title>
+        {products.map((list: TCardList) => {
+          return (
+            <>
+              <Grid.Row align='top' justify="left">
+                <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+                  <Gap size='xl' />
+                  <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.Title>
+                  <Gap size='xl' />
+                </Grid.Col>
+              </Grid.Row>
+              <Grid.Row align='top' justify="left">
+                {list.products.map((element: TCard) => <Card card={element} />)}
+              </Grid.Row>
+              <Gap size='xl' />
+            </>
+          )
+        }
+        )}
+        <Grid.Row align='top' justify="left">
+          <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+            <Gap size='xl' />
+            <Typography.Title tag='h6' view='small' color="tertiary">
+              Посмотреть и потрогать все стикеры можно в A-Store на Технопарке.
+            </Typography.Title>
+            <Typography.Title tag='h6' view='small' color="tertiary">
+              А ещё там можно добавить сразу несколько стикеров на одну вещь.
+            </Typography.Title>
+          </Grid.Col>
+        </Grid.Row>
       </div>
     </Page>
   );
