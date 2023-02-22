@@ -14,11 +14,11 @@ export const AlfaMade = () => {
         <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
             <Gap size='xl' />
-            <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.Title>
+            <Typography.TitleResponsive className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Сделано в Альфе</Typography.TitleResponsive>
             <Gap size='xl' />
-            <Typography.Title tag='h6' view='small' color="primary">
+            <Typography.TitleResponsive tag='h6' view='small' color="primary">
               Хотим каждую из этих вещей! Себе, родным и друзьям
-            </Typography.Title>
+            </Typography.TitleResponsive>
             <Gap size='xl' />
           </Grid.Col>
         </Grid.Row>

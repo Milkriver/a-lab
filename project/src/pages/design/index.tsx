@@ -15,14 +15,14 @@ export const Design = () => {
       <Grid.Row align='top' justify="left">
         <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
           <Gap size='xl' />
-          <Typography.Title className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Свой дизайн</Typography.Title>
+          <Typography.TitleResponsive className={styles.pageTitle} tag='h1' color="primary" weight="bold" view="xlarge">Свой дизайн</Typography.TitleResponsive>
           <Gap size='xl' />
-          <Typography.Title tag='h6' view='small' color="primary">
+          <Typography.TitleResponsive tag='h6' view='small' color="primary">
             Выберите вещь, а затем — цвет, размер и стикер.
-          </Typography.Title>
-          <Typography.Title tag='h6' view='small' color="primary">
+          </Typography.TitleResponsive>
+          <Typography.TitleResponsive tag='h6' view='small' color="primary">
             Перенесём стикер на вещь как на фото
-          </Typography.Title>
+          </Typography.TitleResponsive>
           <Gap size='xl' />
         </Grid.Col>
       </Grid.Row>
@@ -32,7 +32,7 @@ export const Design = () => {
             <Grid.Row align='top' justify="left">
               <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
                 <Gap size='xl' />
-                <Typography.Title tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.Title>
+                <Typography.TitleResponsive tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.TitleResponsive>
                 <Gap size='xl' />
               </Grid.Col>
             </Grid.Row>
@@ -47,12 +47,12 @@ export const Design = () => {
       <Grid.Row align='top' justify="left">
         <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
           <Gap size='xl' />
-          <Typography.Title tag='h6' view='small' color="tertiary">
+          <Typography.TitleResponsive tag='h6' view='small' color="tertiary">
             Посмотреть и потрогать все стикеры можно в A-Store на Технопарке.
-          </Typography.Title>
-          <Typography.Title tag='h6' view='small' color="tertiary">
+          </Typography.TitleResponsive>
+          <Typography.TitleResponsive tag='h6' view='small' color="tertiary">
             А ещё там можно добавить сразу несколько стикеров на одну вещь.
-          </Typography.Title>
+          </Typography.TitleResponsive>
         </Grid.Col>
       </Grid.Row>
     </Page>

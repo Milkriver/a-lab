@@ -60,9 +60,9 @@ export const Product = () => {
           </Grid.Col>
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
             <div className={styles.productInfo}>
-              <Typography.Title tag='h6' view='small' color="primary">{product.title}</Typography.Title>
+              <Typography.TitleResponsive tag='h6' view='small' color="primary">{product.title}</Typography.TitleResponsive>
               <Gap size='xl' />
-              <Typography.Title tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.Title>
+              <Typography.TitleResponsive tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.TitleResponsive>
               {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
               {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
               <Gap size='xl' />

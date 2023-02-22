@@ -6,17 +6,17 @@ import { Page } from '../../components/page/page';
 export const Contacts = () => {
   return (
     <Page>
-        <Typography.Title tag='h1' view='xlarge' color="primary" weight='bold'>Контакты</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='xlarge' color="primary" weight='bold'>Контакты</Typography.TitleResponsive>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='xsmall' color="primary">+7 906 061 60 20</Typography.Title>
-        <Typography.Title tag='h1' view='xsmall' color="primary">info@alfabankstore.ru</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">+7 906 061 60 20</Typography.TitleResponsive>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">info@alfabankstore.ru</Typography.TitleResponsive>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='xsmall' color="primary">г. Москва, пр-т Андропова, 18 корп. 3</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">г. Москва, пр-т Андропова, 18 корп. 3</Typography.TitleResponsive>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='xsmall' color="primary">пн-чт: 10:00—19:00</Typography.Title>
-        <Typography.Title tag='h1' view='xsmall' color="primary">пт: 10:00—17:30</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">пн-чт: 10:00—19:00</Typography.TitleResponsive>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">пт: 10:00—17:30</Typography.TitleResponsive>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='xsmall' color="primary">Принимаем к оплате карты Visa, Mastercard, МИР.</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='xsmall' color="primary">Принимаем к оплате карты Visa, Mastercard, МИР.</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text view='primary-medium' weight='bold'>
           <Link view='primary' href='/policy'>Политика конфиденциальности и обработки персональных данных</Link>

@@ -12,13 +12,13 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <Link href={'/'}><Typography.Title tag='h1' color="accent" weight="bold"> A-Store</Typography.Title></Link>
+      <Link href={'/'}><Typography.TitleResponsive tag='h1' color="accent" weight="bold"> A-Store</Typography.TitleResponsive></Link>
       <div className={styles.menuButton} onClick={handleModalOpen}>
         <BurgerMIcon />
         <Gap size='l' />
-        <Typography.Title className={styles.text} tag='h1' view='medium' color="primary" weight="bold">
+        <Typography.TitleResponsive className={styles.text} tag='h1' view='medium' color="primary" weight="bold">
           меню
-        </Typography.Title>
+        </Typography.TitleResponsive>
       </div>
         <Menu open={open} onClose={handleModalOpen}/>
     </div>
