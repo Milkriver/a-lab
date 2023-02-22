@@ -1,0 +1,25 @@
+.card {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+}
+
+.pageImage {
+    width: 100%;
+    aspect-ratio: 1;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pageTitle {
+    font-size: 80px;
+    line-height: 52px;
+}
+
+.text {
+    font-size: 16px;
+}

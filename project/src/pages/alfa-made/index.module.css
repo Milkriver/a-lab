@@ -1,0 +1,14 @@
+.pageImage {
+    width: 295px;
+    height: 380px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.pageTitle {
+    font-size: 80px;
+    line-height: 52px;
+}
+

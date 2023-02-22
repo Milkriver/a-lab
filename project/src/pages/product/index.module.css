@@ -1,0 +1,22 @@
+.imageWrapper {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-size: cover;
+    margin: 4px;
+}
+
+.pageImage {
+    width: 440px;
+    height: 600px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 850px; 
+}
+
+.description {
+    width: 600px
+}

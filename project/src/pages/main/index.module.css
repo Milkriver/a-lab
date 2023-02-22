@@ -1,0 +1,31 @@
+.pageImageWrapper,
+.pageImageWrapperRight {
+    width: 100%;
+    cursor: pointer;
+    height: 100vh;
+    background-position: center;
+    background-size: no-repeat;
+    background-size: cover;
+}
+
+.pageImageWrapper {
+    background-image: url('../../assets/Frame_46.jpeg');
+}
+
+.pageImageWrapperRight {
+    left: 100%;
+    background-image: url('../../assets/Frame_45.jpeg');
+}
+
+.pageImageWrapper:hover,
+.pageImageWrapperRight:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+}
+.text{
+    padding: var(--gap-l) var(--gap-l);
+}
+.link{
+    color: black;
+    text-decoration: none;
+}
