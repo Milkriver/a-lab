@@ -2,7 +2,8 @@ import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
 import { Button } from '@alfalab/core-components/button';
 import { Gallery } from '@alfalab/core-components/gallery';
-import { Select, BaseSelectChangePayload } from '@alfalab/core-components/select';
+import { BaseSelectChangePayload } from '@alfalab/core-components/select';
+import { SelectResponsive } from '@alfalab/core-components/select/responsive';
 import { useState } from 'react';
 import styles from './index.module.css';
 import { TCard, TOptions } from '../../types';
@@ -27,7 +28,7 @@ export const Product = () => {
   const renderProductAttributeSelect = (attribute: string, attributes: TOptions, handler: (evtPayload: BaseSelectChangePayload) => void, placeholder: string) => {
     return (<>
       <Gap size='xl' />
-      <Select
+      <SelectResponsive
         size='s'
         allowUnselect={false}
         options={attributes}
