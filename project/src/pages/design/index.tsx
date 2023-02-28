@@ -1,15 +1,23 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
+import { useEffect } from 'react';
 import { Card } from '../../components/card';
 import { Page } from '../../components/page/page';
-import { TCard, TCardList } from '../../types';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { detailProductsSelector, productsActions } from '../../store/products';
+import { TCard, TCardGroup } from '../../types';
 import styles from './index.module.css';
 
 
-const products = require('../../mocks/groups.json').groups;
-
 export const Design = () => {
+  const dispatch = useAppDispatch();
+  const detailProducts = useAppSelector(detailProductsSelector);
+
+  useEffect(() => {
+    dispatch(productsActions.detailRequest())
+  }, [dispatch]);
+
   return (
     <Page>
       <Grid.Row align='top' justify="left">
@@ -26,23 +34,20 @@ export const Design = () => {
           <Gap size='xl' />
         </Grid.Col>
       </Grid.Row>
-      {products.map((list: TCardList) => {
-        return (
-          <>
-            <Grid.Row align='top' justify="left">
-              <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
-                <Gap size='xl' />
-                <Typography.TitleResponsive tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.TitleResponsive>
-                <Gap size='xl' />
-              </Grid.Col>
-            </Grid.Row>
-            <Grid.Row align='top' justify="left">
-              {list.products.map((element: TCard) => <Card card={element} />)}
-            </Grid.Row>
-            <Gap size='xl' />
-          </>
-        )
-      }
+      {detailProducts.map((list: TCardGroup) =>
+        <>
+          <Grid.Row align='top' justify="left">
+            <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+              <Gap size='xl' />
+              <Typography.TitleResponsive tag='h1' view='xlarge' color="accent" weight='bold'>{list.title}</Typography.TitleResponsive>
+              <Gap size='xl' />
+            </Grid.Col>
+          </Grid.Row>
+          <Grid.Row align='top' justify="left">
+            {list.products.map((element: TCard) => <Card card={element} />)}
+          </Grid.Row>
+          <Gap size='xl' />
+        </>
       )}
       <Grid.Row align='top' justify="left">
         <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
