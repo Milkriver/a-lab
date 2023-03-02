@@ -33,8 +33,8 @@ export const Product = () => {
   }, [dispatch, productId]);
 
   useEffect(() => {
-    if (product && product.images && product.images.length > 0)
-      setActiveImage(product.images[0])
+    if (product && product.images!.length > 0)
+      setActiveImage(product.images![0])
   }, [product]);
 
   if (!product)
@@ -69,7 +69,7 @@ export const Product = () => {
       <div className={styles.pageWrapper}>
         <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-            <img className={styles.pageImage} src={activeImage} alt={product.title} />
+            <div className={styles.pageImage} style={{backgroundImage: `url(${activeImage})`}} />
             <Gap size='xl' />
             <div>
               <div className={styles.gallery}>
