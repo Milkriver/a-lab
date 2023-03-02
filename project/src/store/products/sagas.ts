@@ -1,7 +1,7 @@
 import { getDesignProducts, getAlfaMadeProducts, getProduct } from './../../api/products';
 import { takeLatest, put, select } from 'redux-saga/effects'
 import * as Effects from "redux-saga/effects";
-import { TCard, TCardGroup, TCardPreview } from '../../types';
+import { TCard, TCardGroup } from '../../types';
 import { productsActions } from './slice';
 import { cardIdSelector } from './selectors';
 
@@ -9,7 +9,7 @@ const call: any = Effects.call;
 
 function* getProductPreviewSaga() {
     try {
-        const products: TCardPreview[] = yield call(getAlfaMadeProducts);
+        const products: TCard[] = yield call(getAlfaMadeProducts);
         yield put(productsActions.previewSuccess(products))
     } catch (error) {
         yield put(productsActions.failure())

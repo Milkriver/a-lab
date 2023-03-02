@@ -2,7 +2,7 @@ import { Typography } from "@alfalab/core-components/typography";
 import { Grid } from "@alfalab/core-components/grid";
 import styles from './index.module.css';
 import { Gap } from "@alfalab/core-components/gap";
-import { TCardPreview } from "../../types";
+import { TCard } from "../../types";
 import { Page } from "../../components/page/page";
 import { Card } from "../../components/card";
 import { useEffect } from "react";
@@ -31,7 +31,7 @@ export const AlfaMade = () => {
         </Grid.Col>
       </Grid.Row>
       <Grid.Row align='top' justify="left">
-        {alfaMadeProducts.map((element: TCardPreview) => <Card card={element} key={element.id}/>)}
+        {alfaMadeProducts.map((element: TCard) => <Card card={element} key={element.id}/>)}
       </Grid.Row>
     </Page>
   );

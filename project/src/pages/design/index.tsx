@@ -1,7 +1,7 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Card } from '../../components/card';
 import { Page } from '../../components/page/page';
 import { useAppDispatch, useAppSelector } from '../../store';
@@ -35,7 +35,7 @@ export const Design = () => {
         </Grid.Col>
       </Grid.Row>
       {detailProducts.map((list: TCardGroup) =>
-        <>
+        <Fragment key={list.id}>
           <Grid.Row align='top' justify="left">
             <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>
               <Gap size='xl' />
@@ -44,10 +44,10 @@ export const Design = () => {
             </Grid.Col>
           </Grid.Row>
           <Grid.Row align='top' justify="left">
-            {list.products.map((element: TCard) => <Card card={element} />)}
+            {list.products.map((element: TCard) => <Card card={element} key={element.id}/>)}
           </Grid.Row>
           <Gap size='xl' />
-        </>
+        </Fragment>
       )}
       <Grid.Row align='top' justify="left">
         <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 12 }}>

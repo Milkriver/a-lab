@@ -1,11 +1,11 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
-import { TCard, TCardPreview } from '../../types';
+import { TCard } from '../../types';
 import styles from './index.module.css';
 
 type TProps = {
-  card: TCard | TCardPreview;
+  card: TCard;
 }
 
 export const Card = ({ card }: TProps) => {
@@ -14,9 +14,9 @@ export const Card = ({ card }: TProps) => {
       <a className={styles.card} href={`/product/${card.id}`}>
         <div className={styles.pageImage} style={{backgroundImage: `url(${card.preview})`}}/>
         <Typography.TitleResponsive tag="div" view='small'>{card.title}</Typography.TitleResponsive>
-        {(card as TCard).subtitle && <Gap size='xs' />}
+        {card.subtitle && <Gap size='xs' />}
         <Typography.TitleResponsive className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">
-          {(card as TCard).subtitle && (card as TCard).subtitle}
+          {card.subtitle && (card as TCard).subtitle}
         </Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.TitleResponsive tag="div" view='small' weight="bold">{card.price}&#8381;</Typography.TitleResponsive>

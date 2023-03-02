@@ -24,33 +24,32 @@ export const Product = () => {
   const sizes: TOptions = [];
   const colors: TOptions = [];
 
-  const {productId} = useParams();
+  const { productId } = useParams();
 
   useEffect(() => {
     const productNumber = Number(productId)
-    if(!isNaN(productNumber))
+    if (!isNaN(productNumber))
       dispatch(productsActions.cardRequest(productNumber))
   }, [dispatch, productId]);
 
-  console.dir(product)
   useEffect(() => {
-    if(product && product.images && product.images.length > 0)
+    if (product && product.images && product.images.length > 0)
       setActiveImage(product.images[0])
   }, [product]);
 
-  if(!product)
-    return <></>
+  if (!product)
+    return null;
 
   const renderProductAttribute = (attribute: TOptions, array: string[]) => array.map((element, index) => attribute.push({ key: (index + 1).toString(), content: element }));
   const handleSize = (evtPayload: BaseSelectChangePayload) => setSize(evtPayload.selected?.content as string);
   const handleColor = (evtPayload: BaseSelectChangePayload) => setColor(evtPayload.selected?.content as string);
 
-  if(product.sizes)
+  if (product.sizes)
     renderProductAttribute(sizes, product.sizes);
 
-  if(product.colors)
+  if (product.colors)
     renderProductAttribute(colors, product.colors);
-  
+
   const renderProductAttributeSelect = (attribute: string, attributes: TOptions, handler: (evtPayload: BaseSelectChangePayload) => void, placeholder: string) => {
     return (<>
       <Gap size='xl' />
@@ -74,15 +73,17 @@ export const Product = () => {
             <Gap size='xl' />
             <div>
               <div className={styles.gallery}>
-                {product.images.map((image: string) => (
+                {product.images && product.images.map((image: string) => (
                   <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} />
                 ))}
               </div>
-              <Gallery
-                open={open}
-                onClose={closeGallery}
-                images={product.images.map(src => ({ src }))}
-              />
+              {(product.images) &&
+                <Gallery
+                  open={open}
+                  onClose={closeGallery}
+                  images={product.images.map(src => ({ src }))}
+                />
+              }
             </div>
           </Grid.Col>
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>

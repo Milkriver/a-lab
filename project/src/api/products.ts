@@ -1,25 +1,19 @@
 import axios from 'axios';
-import { TCard, TCardGroup, TCardPreview } from '../types';
+import { TCard, TCardGroup } from '../types';
 
 const API = 'http://qa-games.ru/astore';
-const APIROUTES = {
-    AlfaMade: '/made-in-alfa',
-    Design: '/your-design',
-    Product: '/product',
-    Order: '/create-order',
-}
 
-export const getAlfaMadeProducts = (): Promise<TCardPreview[]> =>
+export const getAlfaMadeProducts = (): Promise<TCard[]> =>
     axios
-        .get<TCardPreview[]>(`${API}${APIROUTES.AlfaMade}`)
+        .get<TCard[]>(`${API}/made-in-alfa`)
         .then((response) => response.data);
 
 export const getDesignProducts = (): Promise<TCardGroup[]> =>
     axios
-        .get<TCardGroup[]>(`${API}${APIROUTES.Design}`)
+        .get<TCardGroup[]>(`${API}/your-design`)
         .then((response) => response.data);
 
 export const getProduct = (id: number): Promise<TCard> =>
     axios
-        .get<TCard>(`${API}${APIROUTES.Product}/${id}`)
+        .get<TCard>(`${API}/product/${id}`)
         .then((response) => response.data);

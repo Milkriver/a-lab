@@ -1,12 +1,11 @@
 import { TCard, TCardGroup } from './../../types';
 import { createSlice, CaseReducer, PayloadAction } from "@reduxjs/toolkit"
-import { TCardPreview } from "../../types";
 
 type ProductsStateType = {
-    previewProducts: TCardPreview[],
+    previewProducts: TCard[],
     detailProducts: TCardGroup[],
-    card: TCard | undefined,
-    cardId: number | undefined,
+    card?: TCard,
+    cardId?: number,
     isLoading: boolean,
     hasError: boolean,
 }
@@ -14,13 +13,9 @@ type ProductsStateType = {
 const initialState: ProductsStateType = {
     previewProducts: [],
     detailProducts: [],
-    card: undefined,
-    cardId: undefined,
     isLoading: false,
     hasError: false,
 }
-
-const NAME = 'products';
 
 const previewRequest: CaseReducer<ProductsStateType> = (state) => {
     state.isLoading = true;
@@ -38,7 +33,7 @@ const cardRequest: CaseReducer<ProductsStateType, PayloadAction<number>> = (stat
     state.cardId = payload;
 }
 
-const previewSuccess: CaseReducer<ProductsStateType, PayloadAction<TCardPreview[]>> = (
+const previewSuccess: CaseReducer<ProductsStateType, PayloadAction<TCard[]>> = (
     state,
     { payload }
 ) => {
@@ -72,7 +67,7 @@ const failure: CaseReducer<ProductsStateType> = (state) => {
 }
 
 export const { actions: productsActions, reducer: productsReducer } = createSlice({
-    name: NAME,
+    name: 'products',
     initialState,
     reducers: {
         previewRequest,
