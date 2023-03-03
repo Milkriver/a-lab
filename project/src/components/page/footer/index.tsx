@@ -10,13 +10,13 @@ export const Footer = ({ isPageMain = false }: TProps) => {
   return (
     <div className={isPageMain ? styles.mainFooter : styles.footer}>
       <div className={styles.copyright}>
-        <Typography.Title className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">&copy;ООО "Альфа Фьюче Пипл", 2022</Typography.Title>
+        <Typography.TitleResponsive className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">&copy;ООО "Альфа Фьюче Пипл", 2022</Typography.TitleResponsive>
       </div>
       {isPageMain && <div className={styles.policy}>
         <Link href="/policy">
-          <Typography.Title className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">
+          <Typography.TitleResponsive className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">
             Политика в отношении обработки персональных данных
-          </Typography.Title>
+          </Typography.TitleResponsive>
         </Link>
       </div>
       }

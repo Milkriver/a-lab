@@ -5,9 +5,9 @@ import { Page } from '../../components/page/page';
 export const Policy = () => {
   return (
     <Page>
-        <Typography.Title tag='h1' view='medium' color="primary">Политика в отношении обработки персональных данных</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='medium' color="primary">Политика в отношении обработки персональных данных</Typography.TitleResponsive>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">1. Общие положения</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">1. Общие положения</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО «Альфа Фьюче Пипл» (далее – Оператор).
@@ -15,7 +15,7 @@ export const Policy = () => {
           Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта https://store.alfabank.ru.
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">2. Основные понятия, используемые в Политике</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">2. Основные понятия, используемые в Политике</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Автоматизированная обработка персональных данных – обработка персональных данных с помощью средств вычислительной техники;
@@ -33,7 +33,7 @@ export const Policy = () => {
           Уничтожение персональных данных – любые действия, в результате которых персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и (или) результате которых уничтожаются материальные носители персональных данных.
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">3. Оператор может обрабатывать следующие персональные данные Пользователя</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">3. Оператор может обрабатывать следующие персональные данные Пользователя</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Фамилия, имя, отчество;
@@ -44,7 +44,7 @@ export const Policy = () => {
           Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">4. Цели обработки персональных данных</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">4. Цели обработки персональных данных</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Цель обработки персональных данных Пользователя — заключение, исполнение и прекращение гражданско-правовых договоров; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте https://store.alfabank.ru; уточнение деталей заказа.
@@ -52,14 +52,14 @@ export const Policy = () => {
           Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">5. Правовые основания обработки персональных данных</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">5. Правовые основания обработки персональных данных</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте https://store.alfabank.ru. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.
           Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.
@@ -69,14 +69,14 @@ export const Policy = () => {
           Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный адрес Оператора info@alfabankstore.ru с пометкой «Отзыв согласия на обработку персональных данных».
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">7. Трансграничная передача персональных данных</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">7. Трансграничная передача персональных данных</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.
           Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.
         </Typography.Text>
         <Gap size='l' />
-        <Typography.Title tag='h1' view='small' color="primary">8. Заключительные положения</Typography.Title>
+        <Typography.TitleResponsive tag='h1' view='small' color="primary">8. Заключительные положения</Typography.TitleResponsive>
         <Gap size='l' />
         <Typography.Text tag='p' view='primary-small' color="primary">
           Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты info@alfabankstore.ru.

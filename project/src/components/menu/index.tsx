@@ -16,30 +16,30 @@ export const Menu = ({ open, onClose }: IProps) => {
                 <div className={styles.menu}>
                     <Gap size='xl' />
                     <a className={styles.link} href='/made'>
-                        <Typography.Title tag='div' view='medium'>
+                        <Typography.TitleResponsive tag='div' view='medium'>
                             Сделано в Альфе
-                        </Typography.Title>
+                        </Typography.TitleResponsive>
                     </a>
                     <Gap size='xl' />
                     <a className={styles.link} href='/design'>
-                        <Typography.Title tag='div' view='medium'>
+                        <Typography.TitleResponsive tag='div' view='medium'>
                             Свой дизайн
-                        </Typography.Title>
+                        </Typography.TitleResponsive>
                     </a>
                     <Gap size='xl' />
                     <a className={styles.link} href='/contacts'>
-                        <Typography.Title tag='div' view='medium'>
+                        <Typography.TitleResponsive tag='div' view='medium'>
                             Контакты
-                        </Typography.Title>
+                        </Typography.TitleResponsive>
                     </a>
                     <Gap size='8xl' />
                 </div>
             </SidePanelResponsive.Content>
             <SidePanelResponsive.Footer>
                 <a className={styles.link} href='/policy'>
-                    <Typography.Title className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">
+                    <Typography.TitleResponsive className={styles.text} tag="div" view='xsmall' font='styrene' color="tertiary">
                         Политика в отношении обработки персональных данных
-                    </Typography.Title>
+                    </Typography.TitleResponsive>
                 </a>
             </SidePanelResponsive.Footer>
         </SidePanelResponsive>
