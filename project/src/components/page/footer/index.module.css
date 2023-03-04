@@ -9,10 +9,11 @@
 
 .mainFooter {
     display: flex;
-    position: absolute;
+    position: fixed;
     left: var(--gap-xl);
     bottom: 0;
     width: 98%;
+    align-items: flex-end;
 }
 
 .copyright {

@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page: AlfaMade should render correctly 1`] = `
+<div>
+  <div
+    class="header"
+  >
+    <a
+      class="link__component_hcyko link__primary_11lt0"
+      href="/"
+    >
+      <span
+        class="link__text_hcyko"
+      >
+        <h1
+          class="typography__component_mub95 typography__styrene-medium_g9g7d typography__bold_mub95 typography__accent_tcpuw"
+        >
+           A-Store
+        </h1>
+      </span>
+    </a>
+    <div
+      class="menuButton"
+    >
+      <svg
+        fill="currentColor"
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M3 13.25h18v-2.5H3v2.5zm0-7.5v2.5h18v-2.5H3zm0 12.5h18v-2.5H3v2.5z"
+        />
+      </svg>
+      <div
+        class="gap__gap_15oeq gap__vertical_15oeq"
+        data-gap-size="l"
+      />
+      <h1
+        class="typography__component_mub95 text typography__styrene-medium_g9g7d typography__bold_mub95 typography__primary_tcpuw"
+      >
+        меню
+      </h1>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+      
+    <div
+      class="grid__row_11gzm grid__component_e8mm2 grid__top_e8mm2 grid__left_e8mm2 grid__gutter-mobile-s-16_11gzm grid__gutter-desktop-m-24_11gzm"
+    >
+      <div
+        class="grid__col_11gzm grid__component_1sygg grid__width-mobile-12_1sygg grid__width-tablet-12_1sygg grid__width-desktop-12_1sygg"
+      >
+        <div
+          class="gap__gap_15oeq gap__vertical_15oeq"
+          data-gap-size="xl"
+        />
+        <h1
+          class="typography__component_mub95 pageTitle typography__styrene-xlarge_g9g7d typography__bold_mub95 typography__primary_tcpuw"
+        >
+          Сделано в Альфе
+        </h1>
+        <div
+          class="gap__gap_15oeq gap__vertical_15oeq"
+          data-gap-size="xl"
+        />
+        <h6
+          class="typography__component_mub95 typography__styrene-small_g9g7d typography__medium_mub95 typography__primary_tcpuw"
+        >
+          Хотим каждую из этих вещей! Себе, родным и друзьям
+        </h6>
+        <div
+          class="gap__gap_15oeq gap__vertical_15oeq"
+          data-gap-size="xl"
+        />
+      </div>
+    </div>
+    <div
+      class="grid__row_11gzm grid__component_e8mm2 grid__top_e8mm2 grid__left_e8mm2 grid__gutter-mobile-s-16_11gzm grid__gutter-desktop-m-24_11gzm"
+    >
+      <div
+        class="grid__col_11gzm grid__component_1sygg grid__width-mobile-12_1sygg grid__width-tablet-6_1sygg grid__width-desktop-4_1sygg cardWrapper"
+      >
+        <a
+          class="card"
+          href="/product/1"
+        >
+          <div
+            class="pageImage"
+            style="background-image: url(http://src);"
+          />
+          <div
+            class="typography__component_mub95 typography__styrene-small_g9g7d typography__medium_mub95"
+          >
+            productTitle
+          </div>
+          <div
+            class="typography__component_mub95 text typography__styrene-xsmall_g9g7d typography__medium_mub95 typography__tertiary_tcpuw"
+          />
+          <div
+            class="gap__gap_15oeq gap__vertical_15oeq"
+            data-gap-size="l"
+          />
+          <div
+            class="typography__component_mub95 typography__styrene-small_g9g7d typography__bold_mub95"
+          >
+            1000
+            ₽
+          </div>
+          <div
+            class="gap__gap_15oeq gap__vertical_15oeq"
+            data-gap-size="l"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="footer"
+  >
+    <div
+      class="copyright"
+    >
+      <div
+        class="typography__component_mub95 text typography__styrene-xsmall_g9g7d typography__medium_mub95 typography__tertiary_tcpuw"
+      >
+        ©ООО "Альфа Фьюче Пипл", 2022
+      </div>
+    </div>
+  </div>
+</div>
+`;
