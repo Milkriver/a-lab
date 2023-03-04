@@ -69,12 +69,12 @@ export const Product = () => {
       <div className={styles.pageWrapper}>
         <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-            <div className={styles.pageImage} style={{backgroundImage: `url(${activeImage})`}} />
+            <div className={styles.pageImage} style={{backgroundImage: `url(${activeImage})`}} data-testid='active-image'/>
             <Gap size='xl' />
             <div>
               <div className={styles.gallery}>
                 {product.images && product.images.map((image: string) => (
-                  <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} />
+                  <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} data-testid='preview-image' />
                 ))}
               </div>
               {(product.images) &&

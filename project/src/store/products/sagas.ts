@@ -25,7 +25,7 @@ function* getProductDetailSaga() {
     }
 }
 
-function* getCardSaga() {
+export function* getCardSaga() {
     try {
         const cardId: number = yield select(cardIdSelector);
         const product: TCard = yield call(getProduct, cardId);
