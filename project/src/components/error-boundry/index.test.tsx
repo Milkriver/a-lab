@@ -6,6 +6,11 @@ const Child = () => {
 }
 
 describe('Error Boundary', () => {
+  
+  beforeAll(() => {
+    console.error = jest.fn();
+  });
+  
   it(`should render error boundary component with error`, async () => {
     render(
       <ErrorBoundary>
