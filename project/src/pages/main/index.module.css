@@ -2,9 +2,8 @@
 .pageImageWrapperRight {
     width: 100%;
     cursor: pointer;
-    height: 100vh;
+    height: 93vh;
     background-position: center;
-    background-size: no-repeat;
     background-size: cover;
 }
 
