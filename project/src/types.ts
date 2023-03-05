@@ -41,6 +41,7 @@ export type TDeliveryInfo = {
   email: string,
   phone: string,
   address: string,
+  agreement: boolean,
   deliveryType:
   "Доставка по России — 350₽" |
   "Курьером по Москве — 300₽" |
@@ -49,17 +50,7 @@ export type TDeliveryInfo = {
   comment?: string,
 }
 
-export type TOrder = {
-  name: string,
-  email: string,
-  phone: string,
-  address: string,
-  deliveryType:
-  "Доставка по России — 350₽" |
-  "Курьером по Москве — 300₽" |
-  "Самовывоз (пр-т Андропова, 18 корп. 3)"
-  paymentType: "Банковская карта" | "Промокод",
-  comment?: string,
+export type TOrder = TDeliveryInfo & {
   products: {
     id: number,
     totalPrice: number,
