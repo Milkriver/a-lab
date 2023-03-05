@@ -9,6 +9,8 @@ import { ModalShoppingCart } from '../../modal-shopping-cart';
 import { ShoppingBagMIcon } from '@alfalab/icons/glyph/dist/ShoppingBagMIcon';
 // import { BasketLineMIcon } from '@alfalab/icons/glyph/dist/BasketLineMIcon';
 import { Circle } from '@alfalab/core-components/icon-view/circle';
+import { useAppSelector } from '../../../store';
+import { countSelector } from '../../../store/order';
 // import { Badge } from '@alfalab/core-components/badge';
 
 export const Header = () => {
@@ -17,6 +19,7 @@ export const Header = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const handleCartModalOpen = () => setIsCartOpen(prev => !prev);
+  const itemsCount = useAppSelector(countSelector);
 
   return (
     <div className={styles.header}>
@@ -37,7 +40,7 @@ export const Header = () => {
           bottomAddons={
             <Circle backgroundColor='black' size={24}>
               <Typography.Title className={styles.badge} tag='div'>
-                2
+                {itemsCount}
               </Typography.Title>
             </Circle>
           }

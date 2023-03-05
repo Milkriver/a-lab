@@ -1,0 +1,31 @@
+.image{
+    width: 70px;
+    height: 70px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.button {
+    background-color: black;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text{
+    font-size: 14px;
+    line-height: 18px;
+}

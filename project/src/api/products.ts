@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TCard, TCardGroup } from '../types';
+import { TCard, TCardGroup, TOrder } from '../types';
 
 const API = 'http://qa-games.ru/astore';
 
@@ -17,3 +17,8 @@ export const getProduct = (id: number): Promise<TCard> =>
     axios
         .get<TCard>(`${API}/product/${id}`)
         .then((response) => response.data);
+
+export const createOrder = (order: TOrder): Promise<boolean> =>
+    axios
+        .post(`${API}/create-order`, order)
+        .then((response) => response.status === 200);

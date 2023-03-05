@@ -5,13 +5,14 @@ import { Gallery } from '@alfalab/core-components/gallery';
 import { BaseSelectChangePayload } from '@alfalab/core-components/select';
 import { SelectResponsive } from '@alfalab/core-components/select/responsive';
 import { useEffect, useState } from 'react';
-import styles from './index.module.css';
-import { TOptions } from '../../types';
+import { TOptions, TOrderItem } from '../../types';
 import { Page } from '../../components/page/page';
 import { Grid } from '@alfalab/core-components/grid';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { cardSelector, productsActions } from '../../store/products';
+import { orderActions } from '../../store/order';
+import styles from './index.module.css';
 
 export const Product = () => {
   const [open, setOpen] = useState(false);
@@ -39,6 +40,19 @@ export const Product = () => {
 
   if (!product)
     return null;
+
+  const buyHandler = () => {
+    const orderItem: TOrderItem = {
+      productId: product.id,
+      name: product.title,
+      image: product.preview,
+      price: product.price,
+      color: color,
+      model: size,
+    }
+
+    dispatch(orderActions.addItem(orderItem));
+  }
 
   const renderProductAttribute = (attribute: TOptions, array: string[]) => array.map((element, index) => attribute.push({ key: (index + 1).toString(), content: element }));
   const handleSize = (evtPayload: BaseSelectChangePayload) => setSize(evtPayload.selected?.content as string);
@@ -94,7 +108,7 @@ export const Product = () => {
               {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
               {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
               <Gap size='xl' />
-              <Button view='primary'>В корзину</Button>
+              <Button view='primary' onClick={buyHandler} disabled={!product.availability}>В корзину</Button>
               <Gap size='xl' />
               <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
             </div>
