@@ -73,3 +73,9 @@ export type TOrder = {
 export type TOption = { key: string, content: string };
 
 export type TOptions = TOption[];
+
+export type TNotification = {
+  id?: number;
+  title: string;
+  badge?: "negative" | "positive" | "attention" | undefined;
+}

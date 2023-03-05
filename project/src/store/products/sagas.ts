@@ -4,6 +4,7 @@ import * as Effects from "redux-saga/effects";
 import { TCard, TCardGroup } from '../../types';
 import { productsActions } from './slice';
 import { cardIdSelector } from './selectors';
+import { notificationsActions } from '../notifications';
 
 const call: any = Effects.call;
 
@@ -12,6 +13,10 @@ function* getProductPreviewSaga() {
         const products: TCard[] = yield call(getAlfaMadeProducts);
         yield put(productsActions.previewSuccess(products))
     } catch (error) {
+        yield put(notificationsActions.addNotification({
+            title: `Ошибка получения данных. ${(error as Error).message}`,
+            badge: 'negative'
+        }))
         yield put(productsActions.failure())
     }
 }
@@ -21,6 +26,10 @@ function* getProductDetailSaga() {
         const products: TCardGroup[] = yield call(getDesignProducts);
         yield put(productsActions.detailSuccess(products))
     } catch (error) {
+        yield put(notificationsActions.addNotification({
+            title: `Ошибка получения данных. ${(error as Error).message}`,
+            badge: 'negative'
+        }))
         yield put(productsActions.failure())
     }
 }
@@ -31,6 +40,10 @@ export function* getCardSaga() {
         const product: TCard = yield call(getProduct, cardId);
         yield put(productsActions.cardSuccess(product))
     } catch (error) {
+        yield put(notificationsActions.addNotification({
+            title: `Ошибка получения данных. ${(error as Error).message}`,
+            badge: 'negative'
+        }))
         yield put(productsActions.failure())
     }
 }

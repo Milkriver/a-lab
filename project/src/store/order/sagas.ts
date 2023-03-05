@@ -5,6 +5,7 @@ import { TDeliveryInfo, TOrder, TOrderPosition } from '../../types';
 import { orderActions } from './slice';
 import { deliveryInfoSelector, positionsSelector, } from './selectors';
 import { getValue, setValue } from '../../lib/localStorage';
+import { notificationsActions } from '../notifications';
 
 const call: any = Effects.call;
 
@@ -26,8 +27,16 @@ function* createOrderSaga() {
         }) as TOrder;
 
         yield call(createOrder, order);
+        yield put(notificationsActions.addNotification({
+            title: `Заказ успешно создан`,
+            badge: 'positive'
+        }))
         yield put(orderActions.confirmSuccess());
     } catch (error) {
+        yield put(notificationsActions.addNotification({
+            title: `Ошибка отправки данных. ${(error as Error).message}`,
+            badge: 'negative'
+        }))
         yield put(orderActions.confirmFailure())
     }
 }
