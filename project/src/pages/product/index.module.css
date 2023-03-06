@@ -3,6 +3,7 @@
     height: 60px;
     cursor: pointer;
     background-size: cover;
+    background-position: center center;
     margin: 4px;
 }
 

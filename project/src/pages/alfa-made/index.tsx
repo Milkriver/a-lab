@@ -31,7 +31,7 @@ export const AlfaMade = () => {
         </Grid.Col>
       </Grid.Row>
       <Grid.Row align='top' justify="left">
-        {alfaMadeProducts.map((element: TCard) => <Card card={element} key={element.id}/>)}
+        {alfaMadeProducts.map((card: TCard) => <Card card={card} key={card.id}/>)}
       </Grid.Row>
     </Page>
   );

@@ -42,11 +42,8 @@ export type TDeliveryInfo = {
   phone: string,
   address: string,
   agreement: boolean,
-  deliveryType:
-  "Доставка по России — 350₽" |
-  "Курьером по Москве — 300₽" |
-  "Самовывоз (пр-т Андропова, 18 корп. 3)"
-  paymentType: "Банковская карта" | "Промокод",
+  deliveryType: string,
+  paymentType: string,
   comment?: string,
 }
 

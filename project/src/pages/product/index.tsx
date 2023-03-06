@@ -1,7 +1,6 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
 import { Button } from '@alfalab/core-components/button';
-import { Gallery } from '@alfalab/core-components/gallery';
 import { BaseSelectChangePayload } from '@alfalab/core-components/select';
 import { SelectResponsive } from '@alfalab/core-components/select/responsive';
 import { useEffect, useState } from 'react';
@@ -15,13 +14,11 @@ import { orderActions } from '../../store/order';
 import styles from './index.module.css';
 
 export const Product = () => {
-  const [open, setOpen] = useState(false);
+  const product = useAppSelector(cardSelector);
+  const dispatch = useAppDispatch();
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
   const [activeImage, setActiveImage] = useState('');
-  const product = useAppSelector(cardSelector);
-  const dispatch = useAppDispatch();
-  const closeGallery = () => setOpen(false);
   const sizes: TOptions = [];
   const colors: TOptions = [];
 
@@ -34,8 +31,9 @@ export const Product = () => {
   }, [dispatch, productId]);
 
   useEffect(() => {
-    if (product && product.images!.length > 0)
-      setActiveImage(product.images![0])
+    if (product && product.images!.length > 0){
+      setActiveImage(product.images![0]);
+    }
   }, [product]);
 
   if (!product)
@@ -53,7 +51,6 @@ export const Product = () => {
 
     dispatch(orderActions.addItem(orderItem));
   }
-
   const renderProductAttribute = (attribute: TOptions, array: string[]) => array.map((element, index) => attribute.push({ key: (index + 1).toString(), content: element }));
   const handleSize = (evtPayload: BaseSelectChangePayload) => setSize(evtPayload.selected?.content as string);
   const handleColor = (evtPayload: BaseSelectChangePayload) => setColor(evtPayload.selected?.content as string);
@@ -83,21 +80,14 @@ export const Product = () => {
       <div className={styles.pageWrapper}>
         <Grid.Row align='top' justify="left">
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-            <div className={styles.pageImage} style={{backgroundImage: `url(${activeImage})`}} data-testid='active-image'/>
+            <div className={styles.pageImage} style={{ backgroundImage: `url(${activeImage})` }} data-testid='active-image' />
             <Gap size='xl' />
             <div>
               <div className={styles.gallery}>
-                {product.images && product.images.map((image: string) => (
+                {product.images!.filter(x => x !== activeImage).map((image: string) => (
                   <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} data-testid='preview-image' />
                 ))}
               </div>
-              {(product.images) &&
-                <Gallery
-                  open={open}
-                  onClose={closeGallery}
-                  images={product.images.map(src => ({ src }))}
-                />
-              }
             </div>
           </Grid.Col>
           <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
