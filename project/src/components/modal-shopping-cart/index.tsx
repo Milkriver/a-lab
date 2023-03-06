@@ -40,7 +40,6 @@ export const ModalShoppingCart = ({ open, onClose, onNextCartModalOpen }: IProps
             <SidePanelResponsive.Header hasCloser={true}>
                 <Typography.TitleResponsive tag='h1' view='small' weight='bold'>Ваш заказ</Typography.TitleResponsive>
                 <Gap size='m' />
-
             </SidePanelResponsive.Header>
             <SidePanelResponsive.Content>
                 <Divider />

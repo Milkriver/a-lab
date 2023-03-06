@@ -1,13 +1,12 @@
 .modal{
-    width: 98%;
+    width: 100%;
     margin: 0 auto;
 }
+.pageTitle{
+    text-align: center;
+    justify-content: center;
 
-.modalWrapper{
-    padding-left: var(--gap-m);
-    width: 98%;
 }
-
 .image {
     width: 70px;
     height: 70px;
@@ -27,6 +26,13 @@
 .title {
     font-size: 16px;
     line-height: 18px;
+}
+
+.sumtitle{
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .text {

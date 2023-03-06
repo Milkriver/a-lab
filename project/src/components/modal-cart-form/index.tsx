@@ -68,8 +68,10 @@ export const Cart = ({ open, onClose }: IProps) => {
 
   return (
     <ModalResponsive className={styles.modal} open={open} onClose={onClose} fullscreen>
-      <div className={styles.modalWrapper}>
-        <ModalResponsive.Header hasCloser />
+      <ModalResponsive.Header hasCloser>
+        <Typography.TitleResponsive className={styles.pageTitle} tag='h1' view='medium' weight='bold'>Ваш заказ</Typography.TitleResponsive>
+      </ModalResponsive.Header>
+      <ModalResponsive.Content>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid.Row>
             <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
@@ -85,7 +87,7 @@ export const Cart = ({ open, onClose }: IProps) => {
                     error={errors.name?.message}
                   />}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="email"
                 control={control}
@@ -98,7 +100,7 @@ export const Cart = ({ open, onClose }: IProps) => {
                     error={errors.email?.message}
                   />}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="phone"
                 control={control}
@@ -124,7 +126,7 @@ export const Cart = ({ open, onClose }: IProps) => {
                     error={errors.address?.message}
                   />}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="deliveryType"
                 control={control}
@@ -138,14 +140,14 @@ export const Cart = ({ open, onClose }: IProps) => {
                     label='Доставка'
                     error={errors.deliveryType?.message}
                   >
-                    <Radio block={true} label='Доставка по России — 350₽' value='Доставка по России — 350₽' size='m' />
-                    <Radio block={true} label='Курьером по Москве — 300₽' value='Курьером по Москве — 300₽' size='m' />
-                    <Radio block={true} label='Самовывоз (пр-т Андропова, 18 корп. 3)' value='Самовывоз (пр-т Андропова, 18 корп. 3)' size='m' />
+                    <Radio block={true} label='Доставка по России — 350₽' value='Доставка по России — 350₽' size='s' />
+                    <Radio block={true} label='Курьером по Москве — 300₽' value='Курьером по Москве — 300₽' size='s' />
+                    <Radio block={true} label='Самовывоз (пр-т Андропова, 18 корп. 3)' value='Самовывоз (пр-т Андропова, 18 корп. 3)' size='s' />
                   </RadioGroup>}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Input label='Промокод' block={true} />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="agreement"
                 control={control}
@@ -162,7 +164,7 @@ export const Cart = ({ open, onClose }: IProps) => {
                     error={errors.agreement?.message}
                   />}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="comment"
                 control={control}
@@ -176,7 +178,7 @@ export const Cart = ({ open, onClose }: IProps) => {
                     block={true}
                   />}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Controller
                 name="paymentType"
                 control={control}
@@ -194,13 +196,9 @@ export const Cart = ({ open, onClose }: IProps) => {
                     <Radio block={true} label='Промокод' value='Промокод' size='m' />
                   </RadioGroup>}
               />
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
             </Grid.Col>
             <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-              <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
-                Заказ
-              </Typography.TitleResponsive>
-              <Gap size={'s'} />
               {positions.map(position => (
                 <Fragment key={position.id}>
                   <Grid.Row align='middle' justify="center" >
@@ -246,21 +244,20 @@ export const Cart = ({ open, onClose }: IProps) => {
                   <Gap size={'s'} />
                 </Fragment>
               ))}
-              <Gap size={'l'} />
-              <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
+              <Gap size={'m'} />
+              <Typography.TitleResponsive className={styles.sumtitle} tag='h6' view='small' color="primary" weight='bold'>
                 Сумма заказа: {sum}&#8381;
               </Typography.TitleResponsive>
             </Grid.Col>
           </Grid.Row>
           <Grid.Row>
             <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-              <Gap size={'s'} />
+              <Gap size={'xs'} />
               <Button type="submit" className={styles.button} view='primary' colors="inverted" block disabled={sum === 0}>Дальше</Button>
-              <Gap size={'s'} />
             </Grid.Col>
           </Grid.Row>
         </form>
-      </div>
+      </ModalResponsive.Content>
     </ModalResponsive >
   );
 }
