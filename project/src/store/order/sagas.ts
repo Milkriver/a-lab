@@ -67,5 +67,6 @@ export function* watchOrderSaga() {
     yield takeLatest(orderActions.addItem.type, saveLocalOrderSaga);
     yield takeLatest(orderActions.plusPosition.type, saveLocalOrderSaga);
     yield takeLatest(orderActions.minusPosition.type, saveLocalOrderSaga);
+    yield takeLatest(orderActions.dropPosition.type, saveLocalOrderSaga);
     yield takeLatest(orderActions.confirmSuccess.type, saveLocalOrderSaga);
 }

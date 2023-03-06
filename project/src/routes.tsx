@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AlfaMade } from "./pages/alfa-made";
-import { Cart } from "./pages/cart";
 import { Contacts } from "./pages/contacts";
 import { Design } from "./pages/design";
 import { Main } from "./pages/main";
@@ -23,10 +22,6 @@ export const router = createBrowserRouter([
   {
     path: "product/:productId",
     element: <Product />
-  },
-  {
-    path: "cart",
-    element: <Cart />
   },
   {
     path: "contacts",

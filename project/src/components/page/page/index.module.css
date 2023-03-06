@@ -6,3 +6,21 @@
     max-width: 1280px;
     width: 90%;
 }
+
+.text {
+    padding-bottom: var(--gap-xs);
+    padding-left: var(--gap-xs);
+}
+.badge{
+    color: white;
+    font-size: 12px;
+}
+
+.shoppingCartButton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    right: 30px;
+    top: 100px;
+}

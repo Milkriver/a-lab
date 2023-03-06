@@ -1,3 +1,13 @@
+.modal{
+    width: 98%;
+    margin: 0 auto;
+}
+
+.modalWrapper{
+    padding-left: var(--gap-m);
+    width: 98%;
+}
+
 .image {
     width: 70px;
     height: 70px;
