@@ -19,7 +19,12 @@ describe('Page: AlfaMade', () => {
     const store = mockStore({
       products: {
         previewProducts
-      }
+      },
+      order: {
+        positions: [],
+        sum: 0,
+        count: 0,
+      },
     });
 
     const { container } = render(

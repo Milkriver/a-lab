@@ -44,84 +44,6 @@ exports[`Page: Product snapshot should render correctly 1`] = `
         меню
       </h1>
     </div>
-    <div
-      class="shoppingCartButton"
-    >
-      <div
-        class="icon-view__componentWrapper_s9rxj icon-view__size_80_s9rxj"
-      >
-        <div
-          class="icon-view__component_s9rxj"
-        >
-          <svg
-            focusable="false"
-            height="80"
-            viewBox="0 0 80 80"
-            width="80"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              class="icon-view__bg_s9rxj"
-              d="M71 56C74.0263 56 77.2805 54.8407 78.1837 51.9523C79.364 48.178 80 44.1633 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C44.1633 80 48.178 79.364 51.9523 78.1837C54.8407 77.2805 56 74.0263 56 71C56 62.7157 62.7157 56 71 56Z"
-              style="fill: #ef3124;"
-            />
-          </svg>
-          <div
-            class="icon-view__children_s9rxj"
-          >
-            <svg
-              color="white"
-              fill="currentColor"
-              focusable="false"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16 5v1h4l1 16H3L4 6h4V5a4 4 0 118 0zm-4-2a2 2 0 012 2v1h-4V5a2 2 0 012-2zm-2 6a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="icon-view__addons_s9rxj icon-view__bottomAddons_s9rxj"
-        >
-          <div
-            class="icon-view__componentWrapper_s9rxj icon-view__size_24_s9rxj"
-          >
-            <div
-              class="icon-view__component_s9rxj"
-            >
-              <svg
-                focusable="false"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="icon-view__bg_s9rxj"
-                  d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12Z"
-                  style="fill: black;"
-                />
-              </svg>
-              <div
-                class="icon-view__children_s9rxj"
-              >
-                <div
-                  class="typography__component_mub95 badge typography__styrene-medium_1w2s0 typography__medium_mub95"
-                >
-                  2
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
     class="container"
@@ -148,13 +70,7 @@ exports[`Page: Product snapshot should render correctly 1`] = `
           <div>
             <div
               class="gallery"
-            >
-              <div
-                class="imageWrapper"
-                data-testid="preview-image"
-                style="background-image: url(http://srcImage);"
-              />
-            </div>
+            />
           </div>
         </div>
         <div

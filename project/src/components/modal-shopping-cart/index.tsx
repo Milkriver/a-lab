@@ -33,9 +33,8 @@ export const ModalShoppingCart = ({ open, onClose, onNextCartModalOpen }: IProps
         onNextCartModalOpen();
     };
 
-
     return (
-        <SidePanelResponsive
+        <SidePanelResponsive 
             open={open} onClose={onClose}>
             <SidePanelResponsive.Header hasCloser={true}>
                 <Typography.TitleResponsive tag='h1' view='small' weight='bold'>Ваш заказ</Typography.TitleResponsive>

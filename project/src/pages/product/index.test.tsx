@@ -20,7 +20,12 @@ describe('Page: Product', () => {
     const store = mockStore({
       products: {
         card
-      }
+      },
+      order: {
+        count: 0,
+        positions: [],
+        sum: 0
+      },
     });
 
     render(
@@ -32,9 +37,9 @@ describe('Page: Product', () => {
     expect(element.style.backgroundImage).toEqual('url(http://srcImage1)');
 
     const previewImages = screen.getAllByTestId('preview-image')
-    expect(previewImages).toHaveLength(2);
+    expect(previewImages).toHaveLength(1);
 
-    fireEvent.click(previewImages[1]);
+    fireEvent.click(previewImages[0]);
     expect(element.style.backgroundImage).toEqual('url(http://srcImage2)');
   });
 });

@@ -18,7 +18,12 @@ describe('Page: Product snapshot', () => {
     const store = configureMockStore()({
       products: {
         card
-      }
+      },
+      order: {
+        count: 0,
+        positions: [],
+        sum: 0
+      },
     });
 
     const { container } = render(

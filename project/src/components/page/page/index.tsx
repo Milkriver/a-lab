@@ -20,9 +20,7 @@ export const Page = ({ children, isPageMain }: TProps) => {
   const handleCartModalOpen = () => setIsCartOpen(prev => !prev);
 
   const [modalOrderForm, setModalOrderForm] = useState(false);
-  const handleModalOrderForm = () => {
-      setModalOrderForm(!modalOrderForm);
-  };
+  const handleModalOrderForm = () => setModalOrderForm(prev => !prev);
 
   const itemsCount = useAppSelector(countSelector);
   return (
@@ -32,23 +30,23 @@ export const Page = ({ children, isPageMain }: TProps) => {
 
       {(itemsCount > 0) &&
         <div className={styles.shoppingCartButton} onClick={handleCartModalOpen}>
-        <Circle
-          backgroundColor='#ef3124'
-          size={80}
-          bottomAddons={
-            <Circle backgroundColor='black' size={24}>
-              <Typography.Title className={styles.badge} tag='div'>
-                {itemsCount}
-              </Typography.Title>
-            </Circle>
-          }
-        >
-          <ShoppingBagMIcon color='white' />
-        </Circle>
-      </div>
-}
-      <ModalShoppingCart open={isCartOpen} onClose={handleCartModalOpen} onNextCartModalOpen={handleModalOrderForm}/>
-      <Cart open={modalOrderForm} onClose={handleModalOrderForm}/>
+          <Circle
+            backgroundColor='#ef3124'
+            size={80}
+            bottomAddons={
+              <Circle backgroundColor='black' size={24}>
+                <Typography.Title className={styles.badge} tag='div'>
+                  {itemsCount}
+                </Typography.Title>
+              </Circle>
+            }
+          >
+            <ShoppingBagMIcon color='white' />
+          </Circle>
+        </div>
+      }
+      {isCartOpen && <ModalShoppingCart open={isCartOpen} onClose={handleCartModalOpen} onNextCartModalOpen={handleModalOrderForm}/>}
+      {modalOrderForm && <Cart open={modalOrderForm} onClose={handleModalOrderForm}/>}
       <Footer isPageMain={isPageMain} />
     </>
   );
