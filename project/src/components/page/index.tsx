@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Cart } from '../../modal-cart-form';
-import { CartBadge } from '../../cart-badge';
-import { Footer } from '../footer';
-import { Header } from '../header';
-import { ModalShoppingCart } from '../../modal-shopping-cart';
+import { Cart } from '../modal-cart-form';
+import { CartBadge } from '../cart-badge';
+import { Footer } from './footer';
+import { Header } from './header';
+import { ModalShoppingCart } from '../modal-shopping-cart';
 import styles from './index.module.css';
 
 type TProps = {

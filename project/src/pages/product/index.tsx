@@ -5,7 +5,7 @@ import { BaseSelectChangePayload } from '@alfalab/core-components/select';
 import { SelectResponsive } from '@alfalab/core-components/select/responsive';
 import { useEffect, useState } from 'react';
 import { TOptions, TOrderItem } from '../../types';
-import { Page } from '../../components/page/page';
+import { Page } from '../../components/page';
 import { Grid } from '@alfalab/core-components/grid';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store';

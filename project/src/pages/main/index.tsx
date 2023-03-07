@@ -1,6 +1,6 @@
 import { Grid } from "@alfalab/core-components/grid";
 import { Typography } from "@alfalab/core-components/typography";
-import { Page } from "../../components/page/page";
+import { Page } from "../../components/page";
 import styles from './index.module.css';
 
 export const Main = () => {

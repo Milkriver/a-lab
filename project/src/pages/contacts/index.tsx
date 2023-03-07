@@ -1,7 +1,7 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Link } from '@alfalab/core-components/link';
 import { Typography } from '@alfalab/core-components/typography';
-import { Page } from '../../components/page/page';
+import { Page } from '../../components/page';
 import styles from './index.module.css';
 
 export const Contacts = () => {

@@ -1,6 +1,6 @@
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
-import { Page } from '../../components/page/page';
+import { Page } from '../../components/page';
 
 export const Policy = () => {
   return (

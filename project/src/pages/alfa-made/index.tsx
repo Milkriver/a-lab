@@ -3,7 +3,7 @@ import { Grid } from "@alfalab/core-components/grid";
 import styles from './index.module.css';
 import { Gap } from "@alfalab/core-components/gap";
 import { TCard } from "../../types";
-import { Page } from "../../components/page/page";
+import { Page } from "../../components/page";
 import { Card } from "../../components/card";
 import { useEffect } from "react";
 import { previewProductsSelector, productsActions } from "../../store/products";

@@ -3,7 +3,7 @@ import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
 import { Fragment, useEffect } from 'react';
 import { Card } from '../../components/card';
-import { Page } from '../../components/page/page';
+import { Page } from '../../components/page';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { detailProductsSelector, productsActions } from '../../store/products';
 import { TCard, TCardGroup } from '../../types';
