@@ -15,7 +15,7 @@ type TProps = {
     onNextCartModalOpen: () => void,
 }
 
-export const ModalShoppingCart = ({ open, onClose, onNextCartModalOpen }: TProps) => {
+export const ShoppingCart = ({ open, onClose, onNextCartModalOpen }: TProps) => {
     const sum = useAppSelector(sumSelector);
 
     useEffect(() => {

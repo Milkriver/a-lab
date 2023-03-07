@@ -3,7 +3,7 @@ import { Cart } from '../modal-cart-form';
 import { CartBadge } from '../cart-badge';
 import { Footer } from './footer';
 import { Header } from './header';
-import { ModalShoppingCart } from '../modal-shopping-cart';
+import { ShoppingCart } from '../shopping-cart';
 import styles from './index.module.css';
 
 type TProps = {
@@ -25,7 +25,7 @@ export const Page = ({ children, isPageMain }: TProps) => {
         {children}
       </div>
       <CartBadge handleCartOpen={handleCartModalOpen} />
-      <ModalShoppingCart open={isCartOpen} onClose={handleCartModalOpen} onNextCartModalOpen={handleModalOrderForm} />
+      <ShoppingCart open={isCartOpen} onClose={handleCartModalOpen} onNextCartModalOpen={handleModalOrderForm} />
       <Cart open={modalOrderForm} onClose={handleModalOrderForm} />
       <Footer isPageMain={isPageMain} />
     </>
