@@ -19,6 +19,7 @@ export const Product = () => {
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
   const [activeImage, setActiveImage] = useState('');
+  const [buyDisabled, setBuyDisabled] = useState(true);
   const sizes: TOptions = [];
   const colors: TOptions = [];
 
@@ -31,10 +32,20 @@ export const Product = () => {
   }, [dispatch, productId]);
 
   useEffect(() => {
-    if (product && product.images!.length > 0){
+    if (product && product.images!.length > 0) {
       setActiveImage(product.images![0]);
     }
   }, [product]);
+
+  useEffect(() => {
+    if (!product)
+      return;
+
+    const notValidSize = product.sizes && size.length === 0;
+    const notValidColorOk = product.colors && color.length === 0;
+
+    setBuyDisabled(notValidSize || notValidColorOk || !product.availability)
+  }, [product, color, size]);
 
   if (!product)
     return null;
@@ -84,7 +95,7 @@ export const Product = () => {
             <Gap size='xl' />
             <div>
               <div className={styles.gallery}>
-                {product.images!.filter(x => x !== activeImage).map((image: string) => (
+                {product.images!.map((image: string) => (
                   <div className={styles.imageWrapper} key={image} onClick={() => setActiveImage(image)} style={{ backgroundImage: `url(${image})` }} data-testid='preview-image' />
                 ))}
               </div>
@@ -95,10 +106,10 @@ export const Product = () => {
               <Typography.TitleResponsive tag='h6' view='small' color="primary">{product.title}</Typography.TitleResponsive>
               <Gap size='xl' />
               <Typography.TitleResponsive tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.TitleResponsive>
-              {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
-              {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
+              {product.availability && product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
+              {product.availability && product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
               <Gap size='xl' />
-              <Button view='primary' onClick={buyHandler} disabled={!product.availability}>В корзину</Button>
+              <Button view='primary' onClick={buyHandler} disabled={buyDisabled}>В корзину</Button>
               <Gap size='xl' />
               <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
             </div>

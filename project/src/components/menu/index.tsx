@@ -3,12 +3,12 @@ import { SidePanelResponsive } from '@alfalab/core-components/side-panel/Compone
 import { Typography } from '@alfalab/core-components/typography';
 import styles from './index.module.css';
 
-type IProps = {
+type TProps = {
     open: boolean,
     onClose: () => void,
 }
 
-export const Menu = ({ open, onClose }: IProps) => {
+export const Menu = ({ open, onClose }: TProps) => {
     return (
         <SidePanelResponsive className={styles.menuWrapper} open={open} onClose={onClose}>
             <SidePanelResponsive.Header hasCloser={true} />

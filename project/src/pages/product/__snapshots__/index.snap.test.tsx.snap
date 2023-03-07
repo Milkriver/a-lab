@@ -48,7 +48,6 @@ exports[`Page: Product snapshot should render correctly 1`] = `
   <div
     class="container"
   >
-      
     <div
       class="pageWrapper"
     >
@@ -70,7 +69,13 @@ exports[`Page: Product snapshot should render correctly 1`] = `
           <div>
             <div
               class="gallery"
-            />
+            >
+              <div
+                class="imageWrapper"
+                data-testid="preview-image"
+                style="background-image: url(http://srcImage);"
+              />
+            </div>
           </div>
         </div>
         <div

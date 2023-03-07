@@ -37,9 +37,9 @@ describe('Page: Product', () => {
     expect(element.style.backgroundImage).toEqual('url(http://srcImage1)');
 
     const previewImages = screen.getAllByTestId('preview-image')
-    expect(previewImages).toHaveLength(1);
+    expect(previewImages).toHaveLength(2);
 
-    fireEvent.click(previewImages[0]);
+    fireEvent.click(previewImages[1]);
     expect(element.style.backgroundImage).toEqual('url(http://srcImage2)');
   });
 });

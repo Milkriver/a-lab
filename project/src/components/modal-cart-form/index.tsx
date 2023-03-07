@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '@alfalab/core-components/button';
 import { Gap } from '@alfalab/core-components/gap';
 import { Textarea } from '@alfalab/core-components/textarea';
@@ -8,52 +11,32 @@ import { Checkbox } from '@alfalab/core-components/checkbox';
 import { Typography } from '@alfalab/core-components/typography';
 import { PhoneInput } from '@alfalab/core-components/phone-input';
 import { Input } from '@alfalab/core-components/input';
-import { MinusMIcon } from '@alfalab/icons/glyph/dist/MinusMIcon';
-import { PlusMIcon } from '@alfalab/icons/glyph/dist/PlusMIcon';
-import { CrossMIcon } from '@alfalab/icons/glyph/dist/CrossMIcon';
-import { Circle } from '@alfalab/core-components/icon-view/circle';
-import { Fragment, useEffect } from 'react';
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { ModalResponsive } from '@alfalab/core-components/modal/responsive';
+import { CartPositions } from '../cart-positions';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { orderActions, positionsSelector, sumSelector } from '../../store/order';
-import { TDeliveryInfo, TOrderPosition } from '../../types';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
 import { notificationsActions } from '../../store/notifications';
+import { orderSchema } from '../../validation/orderSchema';
+import { TDeliveryInfo } from '../../types';
 import styles from './index.module.css';
 
-type IProps = {
+type TProps = {
   open: boolean,
   onClose: () => void,
 }
 
-const schema = yup.object({
-  name: yup.string().required('Не указано имя'),
-  email: yup.string().email('Некорректный формат электронной почты').required('Не указана электронная почта'),
-  phone: yup.string().trim().matches(/^\+7 \d{3} \d{3}-\d{2}-\d{2}$/, 'Некорректный номер телефона').required('Не указан телефон'),
-  address: yup.string().default('').required('Не указан адрес'),
-  deliveryType: yup.string().required('Не выбран тип доставки'),
-  paymentType: yup.string().required('Не указан способ оплаты'),
-  comment: yup.string(),
-  agreement: yup.boolean().oneOf([true], 'Необходимо согласие')
-}).required();
-
-export const Cart = ({ open, onClose }: IProps) => {
+export const Cart = ({ open, onClose }: TProps) => {
   const positions = useAppSelector(positionsSelector);
   const sum = useAppSelector(sumSelector);
   const dispatch = useAppDispatch();
-  const plusItem = (position: TOrderPosition) => dispatch(orderActions.plusPosition(position))
-  const minusItem = (position: TOrderPosition) => dispatch(orderActions.minusPosition(position))
-  const dropItem = (position: TOrderPosition) => dispatch(orderActions.dropPosition(position))
   const { handleSubmit, control, formState: { errors, isValid } } = useForm<TDeliveryInfo>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(orderSchema),
   });
 
   useEffect(() => {
-    if (positions.length === 0)
+    if (open && positions.length === 0)
       onClose()
-  }, [positions.length, onClose])
+  }, [positions.length, onClose, open])
 
   const onSubmit: SubmitHandler<TDeliveryInfo> = (deliveryInfo) => {
     if (!isValid) {
@@ -199,51 +182,7 @@ export const Cart = ({ open, onClose }: IProps) => {
               <Gap size={'xs'} />
             </Grid.Col>
             <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
-              {positions.map(position => (
-                <Fragment key={position.id}>
-                  <Grid.Row align='middle' justify="center" >
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                      <div className={styles.image} style={{ backgroundImage: `url(${position.image})` }}></div>
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 4, tablet: 4, desktop: 4 }}>
-                      <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
-                        {position.name}
-                      </Typography.TitleResponsive>
-                      <Gap size='xs' />
-                      {position.color &&
-                        <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary" >
-                          цвет: {position.color}
-                        </Typography.TitleResponsive>}
-                      {position.model &&
-                        <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                          размер: {position.model}
-                        </Typography.TitleResponsive>}
-                      {position.sticketNumber &&
-                        <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                          номер стикера: {position.sticketNumber}
-                        </Typography.TitleResponsive>}
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                      <Grid.Row align='middle' justify='center' >
-                        <Circle size={24}><MinusMIcon onClick={() => minusItem(position)} /></Circle>
-                        <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
-                          &nbsp;{position.totalCount}&nbsp;
-                        </Typography.TitleResponsive>
-                        <Circle size={24}><PlusMIcon onClick={() => plusItem(position)} /></Circle>
-                      </Grid.Row>
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                      <Grid.Row align='middle' justify='center' >
-                        <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
-                          {position.totalPrice}&#8381;
-                        </Typography.TitleResponsive>
-                      </Grid.Row>
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 1, tablet: 1, desktop: 1 }}><Circle size={24}><CrossMIcon onClick={() => dropItem(position)} /></Circle></Grid.Col>
-                  </Grid.Row>
-                  <Gap size={'s'} />
-                </Fragment>
-              ))}
+              <CartPositions />
               <Gap size={'m'} />
               <Typography.TitleResponsive className={styles.sumtitle} tag='h6' view='small' color="primary" weight='bold'>
                 Сумма заказа: {sum}&#8381;

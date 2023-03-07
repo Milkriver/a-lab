@@ -6,14 +6,6 @@
     background-repeat: no-repeat;
 }
 
-.button {
-    background-color: black;
-}
-
-.button:hover {
-    background-color: black;
-}
-
 .title {
     font-size: 16px;
     line-height: 18px;
@@ -22,8 +14,4 @@
 .text {
     font-size: 14px;
     line-height: 18px;
-}
-
-.contentWrapper {
-    padding: 0 var(--gap-xl);
 }

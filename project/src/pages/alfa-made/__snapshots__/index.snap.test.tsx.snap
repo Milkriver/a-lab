@@ -48,7 +48,6 @@ exports[`Page: AlfaMade should render correctly 1`] = `
   <div
     class="container"
   >
-      
     <div
       class="grid__row_11gzm grid__component_e8mm2 grid__top_e8mm2 grid__left_e8mm2 grid__gutter-mobile-s-16_11gzm grid__gutter-desktop-m-24_11gzm"
     >

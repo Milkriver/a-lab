@@ -1,0 +1,13 @@
+.badge {
+    color: white;
+    font-size: 12px;
+}
+
+.shoppingCartButton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    right: 30px;
+    top: 100px;
+}

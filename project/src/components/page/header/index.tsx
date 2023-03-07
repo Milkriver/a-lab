@@ -1,16 +1,14 @@
-import styles from './index.module.css';
-import { BurgerMIcon } from '@alfalab/icons/glyph/dist/BurgerMIcon';
 import { useState } from 'react';
+import { BurgerMIcon } from '@alfalab/icons/glyph/dist/BurgerMIcon';
 import { Gap } from '@alfalab/core-components/gap';
 import { Typography } from '@alfalab/core-components/typography';
 import { Link } from '@alfalab/core-components/link';
 import { Menu } from '../../menu';
+import styles from './index.module.css';
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const handleModalOpen = () => setOpen(prev => !prev);
-
-
 
   return (
     <div className={styles.header}>
@@ -23,8 +21,6 @@ export const Header = () => {
         </Typography.TitleResponsive>
       </div>
       <Menu open={open} onClose={handleModalOpen} />
-
-     
     </div>
   );
 }

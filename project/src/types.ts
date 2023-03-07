@@ -65,5 +65,5 @@ export type TOptions = TOption[];
 export type TNotification = {
   id?: number;
   title: string;
-  badge?: "negative" | "positive" | "attention" | undefined;
+  badge?: "negative" | "positive" | "attention";
 }
