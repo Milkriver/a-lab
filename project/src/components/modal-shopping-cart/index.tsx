@@ -7,6 +7,7 @@ import { CartPositions } from '../cart-positions';
 import { useAppSelector } from '../../store';
 import { sumSelector } from '../../store/order';
 import styles from './index.module.css';
+import { useEffect } from 'react';
 
 type TProps = {
     open: boolean,
@@ -16,6 +17,12 @@ type TProps = {
 
 export const ModalShoppingCart = ({ open, onClose, onNextCartModalOpen }: TProps) => {
     const sum = useAppSelector(sumSelector);
+
+    useEffect(() => {
+        if (open && sum === 0) {
+            onClose();
+        }
+    }, [open, sum, onClose])
 
     const nextStepHandler = () => {
         onClose();
