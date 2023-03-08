@@ -7,8 +7,6 @@ import { Page } from '../../components/page';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { detailProductsSelector, productsActions } from '../../store/products';
 import { TCard, TCardGroup } from '../../types';
-import styles from './index.module.css';
-
 
 export const Design = () => {
   const dispatch = useAppDispatch();
