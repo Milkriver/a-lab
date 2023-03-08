@@ -8,39 +8,39 @@ import { CrossMIcon } from '@alfalab/icons/glyph/dist/CrossMIcon';
 import { Circle } from '@alfalab/core-components/icon-view/circle';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { orderActions, positionsSelector } from '../../store/order';
-import { TOrderPosition } from '../../types';
+import { TOrderItem, TOrderPosition } from '../../types';
 import styles from './index.module.css';
 
 export const CartPositions = () => {
     const positions = useAppSelector(positionsSelector);
     const dispatch = useAppDispatch();
-    const plusItem = (position: TOrderPosition) => dispatch(orderActions.plusItem(position))
+    const plusItem = (item: TOrderItem) => dispatch(orderActions.addItem(item))
     const minusItem = (position: TOrderPosition) => dispatch(orderActions.minusItem(position))
     const dropItem = (position: TOrderPosition) => dispatch(orderActions.dropItem(position))
 
     return (<>
         {positions.map(position => (
             <Fragment key={position.id}>
-                <Grid.Row align='middle' justify="center" key={position.id}>
+                <Grid.Row align='middle' justify="center">
                     <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                        <div className={styles.image} style={{ backgroundImage: `url(${position.preview})` }}></div>
+                        <div className={styles.image} style={{ backgroundImage: `url(${position.item.preview})` }}></div>
                     </Grid.Col>
                     <Grid.Col width={{ mobile: 4, tablet: 4, desktop: 4 }}>
                         <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
-                            {position.title}
+                            {position.item.title}
                         </Typography.TitleResponsive>
                         <Gap size='xs' />
-                        {position.color &&
+                        {position.item.color &&
                             <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary" >
-                                цвет: {position.color}
+                                цвет: {position.item.color}
                             </Typography.TitleResponsive>}
-                        {position.model &&
+                        {position.item.model &&
                             <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                                размер: {position.model}
+                                размер: {position.item.model}
                             </Typography.TitleResponsive>}
-                        {position.sticketNumber &&
+                        {position.item.sticketNumber &&
                             <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                                номер стикера: {position.sticketNumber}
+                                номер стикера: {position.item.sticketNumber}
                             </Typography.TitleResponsive>}
                     </Grid.Col>
                     <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
@@ -49,7 +49,7 @@ export const CartPositions = () => {
                             <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
                                 &nbsp;{position.totalCount}&nbsp;
                             </Typography.TitleResponsive>
-                            <Circle size={24}><PlusMIcon onClick={() => plusItem(position)} /></Circle>
+                            <Circle size={24}><PlusMIcon onClick={() => plusItem(position.item)} /></Circle>
                         </Grid.Row>
                     </Grid.Col>
                     <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>

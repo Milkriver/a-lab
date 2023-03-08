@@ -29,11 +29,12 @@ export type TOrderItem = {
   title: string
 }
 
-export type TOrderPosition = TOrderItem & {
+export type TOrderPosition = {
   /** Составной ключ productId_color_model_stickerNumber */
   id: string,
   totalCount: number,
   totalPrice: number,
+  item: TOrderItem
 }
 
 export type TDeliveryInfo = {

@@ -27,27 +27,17 @@ const addItem: CaseReducer<OrderStateType, PayloadAction<TOrderItem>> = (state, 
         existingPosition.totalCount += 1;
         existingPosition.totalPrice += orderItem.price;
     } else {
-        const newPosition = Object.assign(orderItem, {
+        const newPosition = {
             id: positionId,
             totalCount: 1,
             totalPrice: orderItem.price,
-        })
+            item: orderItem
+        }
         items.push(newPosition);
     }
 
     state.positions = items;
     state.sum += orderItem.price;
-    state.count += 1;
-}
-
-const plusItem: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
-    const items = state.positions.slice();
-    const existingPosition = items.find(x => x.id === position.id)!
-    existingPosition.totalCount += 1;
-    existingPosition.totalPrice += position.price;
-
-    state.positions = items;
-    state.sum += position.price;
     state.count += 1;
 }
 
@@ -61,11 +51,11 @@ const minusItem: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (s
         const items = state.positions.slice();
         const existingPosition = items.find(x => x.id === position.id)!
         existingPosition.totalCount -= 1;
-        existingPosition.totalPrice -= position.price;
+        existingPosition.totalPrice -= position.item.price;
         state.positions = items;
     }
 
-    state.sum -= position.price;
+    state.sum -= position.item.price;
     state.count -= 1;
 }
 
@@ -108,7 +98,6 @@ export const { actions: orderActions, reducer: orderReducer } = createSlice({
     initialState,
     reducers: {
         addItem,
-        plusItem,
         minusItem,
         dropItem,
         confirmRequest,
