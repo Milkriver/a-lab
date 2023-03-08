@@ -20,13 +20,13 @@ export type TCardGroup = {
 };
 
 export type TOrderItem = {
-  productId: number,
-  image: string,
+  id: number,
+  preview: string,
   color?: string, 
   model?: string,
   sticketNumber?: number,
   price: number,
-  name: string
+  title: string
 }
 
 export type TOrderPosition = TOrderItem & {

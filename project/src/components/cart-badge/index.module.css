@@ -11,7 +11,7 @@
     right: 30px;
     top: 100px;
     transition: transform .2s;
-    animation: animation 2s forwards;
+    animation: animation .5s forwards;
 }
 
 .shoppingCartButton:hover {

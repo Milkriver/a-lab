@@ -19,7 +19,7 @@ const initialState: OrderStateType = {
 }
 
 const addItem: CaseReducer<OrderStateType, PayloadAction<TOrderItem>> = (state, { payload: orderItem }) => {
-    const positionId = [orderItem.productId, orderItem.color, orderItem.model, orderItem.sticketNumber].join('||')
+    const positionId = [orderItem.id, orderItem.color, orderItem.model, orderItem.sticketNumber].join('||')
     const items = state.positions.slice();
     const existingPosition = items.find(x => x.id === positionId);
 
@@ -40,7 +40,7 @@ const addItem: CaseReducer<OrderStateType, PayloadAction<TOrderItem>> = (state, 
     state.count += 1;
 }
 
-const plusPosition: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
+const plusItem: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
     const items = state.positions.slice();
     const existingPosition = items.find(x => x.id === position.id)!
     existingPosition.totalCount += 1;
@@ -51,7 +51,7 @@ const plusPosition: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> =
     state.count += 1;
 }
 
-const minusPosition: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
+const minusItem: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
     const lastPosition = position.totalCount === 1;
 
     if (lastPosition) {
@@ -69,9 +69,9 @@ const minusPosition: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> 
     state.count -= 1;
 }
 
-const dropPosition: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
+const dropItem: CaseReducer<OrderStateType, PayloadAction<TOrderPosition>> = (state, { payload: position }) => {
     const items = state.positions.filter(x => x.id !== position.id);
-    
+
     state.positions = items;
     state.sum -= position.totalPrice;
     state.count -= position.totalCount;
@@ -108,9 +108,9 @@ export const { actions: orderActions, reducer: orderReducer } = createSlice({
     initialState,
     reducers: {
         addItem,
-        plusPosition,
-        minusPosition,
-        dropPosition,
+        plusItem,
+        minusItem,
+        dropItem,
         confirmRequest,
         confirmSuccess,
         confirmFailure,

@@ -14,20 +14,20 @@ import styles from './index.module.css';
 export const CartPositions = () => {
     const positions = useAppSelector(positionsSelector);
     const dispatch = useAppDispatch();
-    const plusItem = (position: TOrderPosition) => dispatch(orderActions.plusPosition(position))
-    const minusItem = (position: TOrderPosition) => dispatch(orderActions.minusPosition(position))
-    const dropItem = (position: TOrderPosition) => dispatch(orderActions.dropPosition(position))
+    const plusItem = (position: TOrderPosition) => dispatch(orderActions.plusItem(position))
+    const minusItem = (position: TOrderPosition) => dispatch(orderActions.minusItem(position))
+    const dropItem = (position: TOrderPosition) => dispatch(orderActions.dropItem(position))
 
     return (<>
         {positions.map(position => (
             <Fragment key={position.id}>
                 <Grid.Row align='middle' justify="center" key={position.id}>
                     <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                        <div className={styles.image} style={{ backgroundImage: `url(${position.image})` }}></div>
+                        <div className={styles.image} style={{ backgroundImage: `url(${position.preview})` }}></div>
                     </Grid.Col>
                     <Grid.Col width={{ mobile: 4, tablet: 4, desktop: 4 }}>
                         <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
-                            {position.name}
+                            {position.title}
                         </Typography.TitleResponsive>
                         <Gap size='xs' />
                         {position.color &&

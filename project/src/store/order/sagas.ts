@@ -14,7 +14,7 @@ function* createOrderSaga() {
         const deliveryInfo: TDeliveryInfo = yield select(deliveryInfoSelector);
         const positions: TOrderPosition[] = yield select(positionsSelector);
         const products = positions.map(x => ({
-            id: x.productId,
+            id: x.id,
             totalPrice: x.totalPrice,
             totalCount: x.totalCount,
             color: x.color,
@@ -65,8 +65,8 @@ export function* watchOrderSaga() {
     yield call(initOrderSaga)
     yield takeLatest(orderActions.saveDeliveryInfo.type, createOrderSaga);
     yield takeLatest(orderActions.addItem.type, saveLocalOrderSaga);
-    yield takeLatest(orderActions.plusPosition.type, saveLocalOrderSaga);
-    yield takeLatest(orderActions.minusPosition.type, saveLocalOrderSaga);
-    yield takeLatest(orderActions.dropPosition.type, saveLocalOrderSaga);
+    yield takeLatest(orderActions.plusItem.type, saveLocalOrderSaga);
+    yield takeLatest(orderActions.minusItem.type, saveLocalOrderSaga);
+    yield takeLatest(orderActions.dropItem.type, saveLocalOrderSaga);
     yield takeLatest(orderActions.confirmSuccess.type, saveLocalOrderSaga);
 }

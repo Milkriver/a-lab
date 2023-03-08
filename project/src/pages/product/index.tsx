@@ -50,13 +50,15 @@ export const Product = () => {
   if (!product)
     return null;
 
+  const { id, title, preview, price } = product;
+
   const buyHandler = () => {
     const orderItem: TOrderItem = {
-      productId: product.id,
-      name: product.title,
-      image: product.preview,
-      price: product.price,
-      color: color,
+      id,
+      title,
+      preview,
+      price,
+      color,
       model: size,
     }
 
@@ -106,10 +108,10 @@ export const Product = () => {
               <Typography.TitleResponsive tag='h6' view='small' color="primary">{product.title}</Typography.TitleResponsive>
               <Gap size='xl' />
               <Typography.TitleResponsive tag='h6' view='small' color="primary" weight='bold'>{product.price}&#8381;</Typography.TitleResponsive>
-              {product.availability && product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
-              {product.availability && product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
+              {product.sizes && renderProductAttributeSelect(size, sizes, handleSize, 'Выберите размер')}
+              {product.colors && renderProductAttributeSelect(color, colors, handleColor, 'Выберите цвет')}
               <Gap size='xl' />
-              <Button view='primary' onClick={buyHandler} disabled={buyDisabled}>В корзину</Button>
+              <Button view='primary' onClick={buyHandler} disabled={buyDisabled || !product.availability}>В корзину</Button>
               <Gap size='xl' />
               <Typography.Text className={styles.description} tag='div' view='primary-large' color="primary">{product.description}</Typography.Text>
             </div>
