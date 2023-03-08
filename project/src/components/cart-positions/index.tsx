@@ -21,47 +21,52 @@ export const CartPositions = () => {
     return (<>
         {positions.map(position => (
             <Fragment key={position.id}>
-                <Grid.Row align='middle' justify="center">
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
+                <Grid.Row className={styles.cartRow} align='top' justify="center">
+                    <Grid.Col width={{ mobile: 3, tablet: 2, desktop: 3 }}>
                         <div className={styles.image} style={{ backgroundImage: `url(${position.item.preview})` }}></div>
                     </Grid.Col>
-                    <Grid.Col width={{ mobile: 4, tablet: 4, desktop: 4 }}>
-                        <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
-                            {position.item.title}
-                        </Typography.TitleResponsive>
-                        <Gap size='xs' />
-                        {position.item.color &&
-                            <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary" >
-                                цвет: {position.item.color}
-                            </Typography.TitleResponsive>}
-                        {position.item.model &&
-                            <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                                размер: {position.item.model}
-                            </Typography.TitleResponsive>}
-                        {position.item.sticketNumber &&
-                            <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
-                                номер стикера: {position.item.sticketNumber}
-                            </Typography.TitleResponsive>}
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                        <Grid.Row align='middle' justify='center' >
-                            <Circle size={24}><MinusMIcon onClick={() => minusItem(position)} /></Circle>
-                            <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
-                                &nbsp;{position.totalCount}&nbsp;
-                            </Typography.TitleResponsive>
-                            <Circle size={24}><PlusMIcon onClick={() => plusItem(position.item)} /></Circle>
+                    <Grid.Col width={{ mobile: 8, tablet: 8, desktop: 8 }} >
+                        <Grid.Row className={styles.cartRow} align='top' justify="center">
+                            <Grid.Col width={{ mobile: 12, tablet: 12, desktop: 6 }}>
+                                <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary" weight='bold'>
+                                    {position.item.title}
+                                </Typography.TitleResponsive>
+                                <Gap size='xs' />
+                                {position.item.color &&
+                                    <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary" >
+                                        цвет: {position.item.color}
+                                    </Typography.TitleResponsive>}
+                                {position.item.model &&
+                                    <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
+                                        размер: {position.item.model}
+                                    </Typography.TitleResponsive>}
+                                {position.item.sticketNumber &&
+                                    <Typography.TitleResponsive className={styles.text} tag='h6' view='small' color="primary">
+                                        номер стикера: {position.item.sticketNumber}
+                                    </Typography.TitleResponsive>}
+                                    <Gap size='s' />
+                            </Grid.Col>
+                            <Grid.Col width={{ mobile: 6, tablet: 6, desktop: 3 }}>
+                                <Grid.Row align='middle' justify='left' >
+                                    <Circle size={20}><MinusMIcon onClick={() => minusItem(position)} /></Circle>
+                                    <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
+                                        &nbsp;{position.totalCount}&nbsp;
+                                    </Typography.TitleResponsive>
+                                    <Circle size={20}><PlusMIcon onClick={() => plusItem(position.item)} /></Circle>
+                                </Grid.Row>
+                            </Grid.Col>
+                            <Grid.Col width={{ mobile: 6, tablet: 6, desktop: 3 }}>
+                                <Grid.Row align='middle' justify='right' >
+                                    <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
+                                        {position.totalPrice}&#8381;
+                                    </Typography.TitleResponsive>
+                                </Grid.Row>
+                            </Grid.Col>
                         </Grid.Row>
                     </Grid.Col>
-                    <Grid.Col width={{ mobile: 2, tablet: 2, desktop: 2 }}>
-                        <Grid.Row align='middle' justify='center' >
-                            <Typography.TitleResponsive className={styles.title} tag='h6' view='small' color="primary">
-                                {position.totalPrice}&#8381;
-                            </Typography.TitleResponsive>
-                        </Grid.Row>
-                    </Grid.Col>
-                    <Grid.Col width={{ mobile: 1, tablet: 1, desktop: 1 }}><Circle size={24}><CrossMIcon onClick={() => dropItem(position)} /></Circle></Grid.Col>
+                    <Grid.Col width={{ mobile: 1, tablet: 1, desktop: 1 }} align='top'><Circle size={20}><CrossMIcon onClick={() => dropItem(position)} /></Circle></Grid.Col>
                 </Grid.Row>
-                <Gap size='s' />
+                <Gap size='l' />
             </Fragment>
         ))}
     </>);
